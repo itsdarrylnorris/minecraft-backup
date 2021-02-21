@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:tractor_front_wheel"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " O ",
+      "OGO",
+      " O "
+    ],
+    "key": {
+      "O": {
+        "item": "minecraft:obsidian"
+      },
+      "G": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "advfarm:tractor_front_wheel"
+    }
+  }
+}

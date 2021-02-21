@@ -1,0 +1,64 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.goat.grazing": {
+      "animation_length": 2.0,
+      "loop": true,
+      "bones": {
+        "neck": {
+          "position": {
+            "0": [ 0.0, 0.0, 0.0 ],
+            "0.2": [ 0.0, -1.0, -2.5 ],
+            "1.8": [ 0.0, -1.0, -2.5 ],
+            "2": [ 0.0, 0.0, 0.0 ]
+          },
+          "rotation": {
+            "0": [ 0.0, 0.0, 0.0 ],
+            "0.2": [ 60.0, 0.0, 0.0 ],
+            "1.8": [ 60.0, 0.0, 0.0 ],
+            "2": [ 0.0, 0.0, 0.0 ]
+          }
+        },
+        "head": {
+          "position": {
+            "0.2": [ 0.0, -1.0, -0.5 ],
+            "1.8": [ 0.0, -1.0, -0.5 ]
+          },
+          "rotation": {
+            "0.2": {
+              "post": [ "180.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ],
+              "pre": [ 36.0, 0.0, 0.0 ]
+            },
+            "1.8": {
+              "post": [ 36.0, 0.0, 0.0 ],
+              "pre": [ "180.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ]
+            }
+          }
+        },
+        "jaw": {
+          "rotation": {
+            "0.2": {
+              "post": [ "100.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ],
+              "pre": [ 36.0, 0.0, 0.0 ]
+            },
+            "1.8": {
+              "post": [ 36.0, 0.0, 0.0 ],
+              "pre": [ "100.0 * (0.2 + 0.07 * math.sin(query.key_frame_lerp_time * 1644.39))", 0.0, 0.0 ]
+            }
+          }
+        }
+      }
+    },
+    "animation.goat.look_at_target": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "relative_to": {
+            "rotation": "entity"
+          },
+          "rotation": [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+        }
+      }
+    }
+  }
+}

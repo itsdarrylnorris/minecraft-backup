@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:organic_material_from_leaves"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:leaves"
+      }
+    },
+    "result": {
+      "item": "advfarm:organic_material"
+    }
+  }
+}

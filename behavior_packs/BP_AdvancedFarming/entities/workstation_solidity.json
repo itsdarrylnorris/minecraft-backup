@@ -1,0 +1,734 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "advfarm:workstation_solidity",
+      "runtime_identifier": "minecraft:shulker",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "break"
+        ]
+      },
+      "animations": {
+        "break": "controller.animation.workstation.break"
+      }
+    },
+    "component_groups": {
+      "advfarm:trade_table": {
+        "minecraft:economy_trade_table": {
+          "display_name": "entity.advfarm:workstation.name",
+          "hero_demand_discount": 0,
+          "table": "trading/workstation.json",
+          "new_screen": true
+        }
+      },
+      "advfarm:destroy_stage_0": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_2"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_1"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "advfarm:destroy_stage_1": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_3"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_2"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "advfarm:destroy_stage_2": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_4"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_3"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "advfarm:destroy_stage_3": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:object_break"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_4"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+      "advfarm:destroy_stage_4": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:object_break"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+      "advfarm:object_break": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "invisibility",
+              "duration": 100,
+              "visible": false
+            },
+            {
+              "effect": "instant_damage",
+              "duration": 100,
+              "amplifier": 250,
+              "visible": false
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "magic",
+              "deals_damage": true
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:despawn": {}
+      },
+      "advfarm:enable_drops": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/workstation.json"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "workstation_solidity", "inanimate" ]
+      },
+      "minecraft:ambient_sound_interval": {
+        "event_name": "ambient",
+        "value": 0.0,
+        "range": 0.0
+      },
+      "minecraft:area_attack" : {
+        "damage_range": 0.0,
+        "damage_per_tick": 0,
+        "entity_filter": {
+          "any_of": [
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "workstation" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 0 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 0 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "workstation" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 1 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 1 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "workstation" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 2 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 2 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "workstation" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 3 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 3 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "workstation" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 4 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 4 }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:breathable": {
+        "breathes_water": true
+      },
+      "minecraft:navigation.generic": {
+        "can_sink": false
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:health": {
+        "value": 0.5,
+        "max": 0.5
+      },
+      "minecraft:is_stackable": {
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:trade_table"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_0": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_0"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_1": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_1"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_2": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_2"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_3": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_3"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_4": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_4"
+          ]
+        }
+      },
+      "advfarm:object_break": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:object_break",
+            "advfarm:enable_drops"
+          ]
+        }
+      },
+      "advfarm:object_remove": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:object_break"
+          ]
+        }
+      }
+    }
+  }
+}

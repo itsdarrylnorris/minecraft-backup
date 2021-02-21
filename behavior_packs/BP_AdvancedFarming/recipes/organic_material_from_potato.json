@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:organic_material_from_potato"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:potato"
+      }
+    },
+    "result": {
+      "item": "advfarm:organic_material"
+    }
+  }
+}

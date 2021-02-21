@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:tractor_tool_item",
+      "materials": { "default": "player_tractor_tool" },
+      "textures": {
+        "default": "textures/entity/tractor/tractor",
+        "headlight": "textures/entity/tractor/headlight_off"
+      },
+      "geometry": {
+        "no_tool": "geometry.tractor.no_tool",
+        "harvester": "geometry.item.harvester",
+        "mower": "geometry.item.mower",
+        "plow": "geometry.item.plow",
+        "sprinkler": "geometry.item.sprinkler",
+        "tractor_body_with_roof": "geometry.item.tractor_body_with_roof",
+        "tractor_body_with_wheel": "geometry.item.tractor_body_with_wheel",
+        "tractor_body_with_wheels": "geometry.item.tractor_body_with_wheels",
+        "tractor_body": "geometry.item.tractor_body",
+        "tractor_front_wheel": "geometry.item.tractor_front_wheel",
+        "tractor_front_wheels": "geometry.item.tractor_front_wheels",
+        "tractor_rear_wheel": "geometry.item.tractor_rear_wheel",
+        "tractor_rear_wheels": "geometry.item.tractor_rear_wheels",
+        "tractor_roof": "geometry.item.tractor_roof",
+        "tractor_steering_wheel": "geometry.item.tractor_steering_wheel"
+      },
+      "animations": {
+        "rotate": "animation.item.tractor_tool.rotate"
+      },
+      "scripts": {
+        "scale": "(query.mark_variant >= 1 && query.mark_variant <= 4) || query.mark_variant == 10 || query.mark_variant == 12 ? 0.4 : ((query.mark_variant >= 5 && query.mark_variant <= 8) || query.mark_variant == 13 ? 0.3 : (query.mark_variant == 9 || query.mark_variant == 11 ? 0.6 : 1.0))",
+        "animate": [
+          "rotate"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.tractor_tool_item",
+        { "controller.render.tractor_tool_item.headlight": "(query.mark_variant >= 5 && query.mark_variant <= 8) || query.mark_variant == 13" }
+      ]
+    }
+  }
+}

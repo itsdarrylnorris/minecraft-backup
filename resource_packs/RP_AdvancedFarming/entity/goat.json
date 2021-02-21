@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:goat",
+      "materials": { "default": "goat" },
+      "textures": {
+        "black": "textures/entity/goat/goat_black",
+        "brown": "textures/entity/goat/goat_brown",
+        "tan": "textures/entity/goat/goat_tan"
+      },
+      "geometry": {
+        "default": "geometry.goat"
+      },
+      "animations": {
+        "grazing": "animation.goat.grazing",
+        "look_at_target": "animation.goat.look_at_target",
+        "move": "controller.animation.goat.move",
+        "walk": "animation.quadruped.walk"
+      },
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          "move",
+          { "walk": "query.modified_move_speed" }
+        ]
+      },
+      "render_controllers": [ "controller.render.goat" ],
+      "spawn_egg": {
+        "texture": "egg_goat",
+        "texture_index": 0
+      }
+    }
+  }
+}

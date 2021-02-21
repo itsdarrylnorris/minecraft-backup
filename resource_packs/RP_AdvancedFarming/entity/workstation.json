@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:workstation",
+      "materials": { "default": "workstation" },
+      "textures": {
+        "default": "textures/entity/workstation/workstation",
+        "destroy_stage_0": "textures/entity/workstation/destroy_stage_0",
+        "destroy_stage_1": "textures/entity/workstation/destroy_stage_1",
+        "destroy_stage_2": "textures/entity/workstation/destroy_stage_2",
+        "destroy_stage_3": "textures/entity/workstation/destroy_stage_3",
+        "destroy_stage_4": "textures/entity/workstation/destroy_stage_4",
+        "destroy_stage_5": "textures/entity/workstation/destroy_stage_5",
+        "destroy_stage_6": "textures/entity/workstation/destroy_stage_6",
+        "destroy_stage_7": "textures/entity/workstation/destroy_stage_7",
+        "destroy_stage_8": "textures/entity/workstation/destroy_stage_8",
+        "destroy_stage_9": "textures/entity/workstation/destroy_stage_9"
+      },
+      "geometry": {
+        "default": "geometry.workstation"
+      },
+      "animations": {
+        "destroy": "controller.animation.workstation.destroy",
+        "setup": "animation.workstation.setup"
+      },
+      "scripts": {
+        "animate": [
+          "destroy",
+          "setup"
+        ]
+      },
+      "particle_effects": {
+        "destruct": "advfarm:workstation_destruct"
+      },
+      "render_controllers": [ "controller.render.workstation" ],
+      "spawn_egg": {
+        "texture": "workstation",
+        "texture_index": 0
+      }
+    }
+  }
+}

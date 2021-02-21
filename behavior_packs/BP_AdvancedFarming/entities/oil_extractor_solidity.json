@@ -1,0 +1,1270 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "advfarm:oil_extractor_solidity",
+      "runtime_identifier": "minecraft:shulker",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "break"
+        ]
+      },
+      "animations": {
+        "break": "controller.animation.workstation.break"
+      }
+    },
+    "component_groups": {
+      "advfarm:has_canister": {
+        "minecraft:is_charged": {
+        }
+      },
+      "advfarm:working_machine": {
+        "minecraft:behavior.knockback_roar": {
+          "duration": 0.476190476,
+          "attack_time": 0,
+          "knockback_damage": 0,
+          "knockback_strength": 0,
+          "knockback_range": 0,
+          "on_roar_end": {
+            "event": "advfarm:working_machine"
+          }
+        }
+      },
+      "advfarm:machine_process_completed": {
+        "minecraft:spawn_entity": {
+          "min_wait_time": 0,
+          "max_wait_time": 0,
+          "spawn_item": "advfarm:vegetable_oil",
+          "single_use": true
+        }
+      },
+      "advfarm:machine_off": {
+        "minecraft:variant": { "value": 0 }
+      },
+      "advfarm:machine_on_1": {
+        "minecraft:variant": { "value": 1 }
+      },
+      "advfarm:machine_on_2": {
+        "minecraft:variant": { "value": 2 }
+      },
+      "advfarm:machine_on_3": {
+        "minecraft:variant": { "value": 3 }
+      },
+      "advfarm:machine_on_4": {
+        "minecraft:variant": { "value": 4 }
+      },
+      "advfarm:machine_on_5": {
+        "minecraft:variant": { "value": 5 }
+      },
+      "advfarm:machine_on_6": {
+        "minecraft:variant": { "value": 6 }
+      },
+      "advfarm:machine_on_7": {
+        "minecraft:variant": { "value": 7 }
+      },
+      "advfarm:machine_on_8": {
+        "minecraft:variant": { "value": 8 }
+      },
+      "advfarm:machine_on_9": {
+        "minecraft:variant": { "value": 9 }
+      },
+      "advfarm:machine_on_10": {
+        "minecraft:variant": { "value": 10 }
+      },
+      "advfarm:machine_on_11": {
+        "minecraft:variant": { "value": 11 }
+      },
+      "advfarm:machine_on_12": {
+        "minecraft:variant": { "value": 12 }
+      },
+      "advfarm:machine_on_13": {
+        "minecraft:variant": { "value": 13 }
+      },
+      "advfarm:machine_on_14": {
+        "minecraft:variant": { "value": 14 }
+      },
+      "advfarm:machine_on_15": {
+        "minecraft:variant": { "value": 15 }
+      },
+      "advfarm:machine_on_16": {
+        "minecraft:variant": { "value": 16 }
+      },
+      "advfarm:machine_on_17": {
+        "minecraft:variant": { "value": 17 }
+      },
+      "advfarm:machine_on_18": {
+        "minecraft:variant": { "value": 18 }
+      },
+      "advfarm:machine_on_19": {
+        "minecraft:variant": { "value": 19 }
+      },
+      "advfarm:machine_on_20": {
+        "minecraft:variant": { "value": 20 }
+      },
+      "advfarm:destroy_stage_0": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_2"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_1"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+      "advfarm:destroy_stage_1": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_3"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_2"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+      "advfarm:destroy_stage_2": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:destroy_stage_4"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_3"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+      "advfarm:destroy_stage_3": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "any_of": [
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "diamond_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "golden_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "iron_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "netherite_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "stone_pickaxe"
+                        },
+                        {
+                          "test": "has_equipment",
+                          "domain": "hand",
+                          "subject": "other",
+                          "value": "wooden_pickaxe"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "event": "advfarm:object_break"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:destroy_stage_4"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+      "advfarm:destroy_stage_4": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  ]
+                },
+                "event": "advfarm:object_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:object_break"
+              },
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 0.4,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:destroy_stage_0",
+            "target": "self"
+          }
+        },
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+      "advfarm:object_break": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "invisibility",
+              "duration": 100,
+              "visible": false
+            },
+            {
+              "effect": "instant_damage",
+              "duration": 100,
+              "amplifier": 250,
+              "visible": false
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "magic",
+              "deals_damage": true
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:despawn": {}
+      },
+      "advfarm:empty_machine_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/oil_extractor.json"
+        }
+      },
+      "advfarm:machine_canister_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/oil_extractor_with_canister.json"
+        }
+      },
+      "advfarm:machine_items_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/oil_extractor_with_items.json"
+        }
+      },
+      "advfarm:machine_canister_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/oil_extractor_canister.json"
+        }
+      },
+      "advfarm:machine_items_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/oil_extractor_items.json"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "oil_extractor_solidity", "inanimate" ]
+      },
+      "minecraft:ambient_sound_interval": {
+        "event_name": "ambient",
+        "value": 0.0,
+        "range": 0.0
+      },
+      "minecraft:area_attack" : {
+        "damage_range": 0.0,
+        "damage_per_tick": 0,
+        "entity_filter": {
+          "any_of": [
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "oil_extractor" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 0 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 0 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "oil_extractor" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 1 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 1 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "oil_extractor" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 2 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 2 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "oil_extractor" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 3 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 3 }
+              ]
+            },
+            {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "oil_extractor" },
+                { "test": "is_skin_id", "subject": "self", "operator": "==", "value": 4 },
+                { "test": "is_skin_id", "subject": "other", "operator": "!=", "value": 4 }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:breathable": {
+        "breathes_water": true
+      },
+      "minecraft:navigation.generic": {
+        "can_sink": false
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:health": {
+        "value": 0.5,
+        "max": 0.5
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "advfarm:canister" },
+                  { "test": "has_component", "operator": "!=", "value": "minecraft:is_charged" },
+                  { "test": "is_variant", "operator": "<=", "value": 0 }
+                ]
+              },
+              "event": "advfarm:put_canister",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "interact_text": "action.interact.machine:canister"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "double_plant:0" },
+                  { "test": "has_component", "operator": "==", "value": "minecraft:is_charged" },
+                  { "test": "is_variant", "operator": "<=", "value": 0 }
+                ]
+              },
+              "event": "advfarm:start_up_machine",
+              "target": "self"
+            },
+            "cooldown": 2.5,
+            "use_item": true,
+            "interact_text": "action.interact.machine:start_up"
+          }
+        ]
+      },
+      "minecraft:is_stackable": {
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:scheduler": {
+        "min_delay_secs": 0,
+        "max_delay_secs": 0,
+        "scheduled_events": [
+          {
+            "filters": [
+              { "test": "has_component", "value": "minecraft:spawn_entity" }
+            ],
+            "event": "advfarm:machine_process_completed"
+          }
+        ]
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:machine_off"
+          ]
+        }
+      },
+      "advfarm:put_canister": {
+        "add": {
+          "component_groups": [
+            "advfarm:has_canister"
+          ]
+        }
+      },
+      "advfarm:start_up_machine": {
+        "add": {
+          "component_groups": [
+            "advfarm:working_machine"
+          ]
+        }
+      },
+      "advfarm:working_machine": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_variant",
+                  "operator": "==",
+                  "value": 0
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_1"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 1
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_2"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_3"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 3
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_4"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 4
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_5"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 5
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_6"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 6
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_7"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 7
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_8"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 8
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_9"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 9
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_10"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 10
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_11"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 11
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_12"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 12
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_13"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 13
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_14"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 14
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_15"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 15
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_16"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 16
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_17"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 17
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_18"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 18
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_19"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 19
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_on_20"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 20
+            },
+            "remove": {
+              "component_groups": [
+                "advfarm:has_canister",
+                "advfarm:working_machine"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_off",
+                "advfarm:machine_process_completed"
+              ]
+            }
+          }
+        ]
+      },
+      "advfarm:machine_process_completed": {
+        "remove": {
+          "component_groups": [
+            "advfarm:machine_process_completed"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_0": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_0"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_1": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_1"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_2": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_3",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_2"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_3": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_4"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_3"
+          ]
+        }
+      },
+      "advfarm:destroy_stage_4": {
+        "remove": {
+          "component_groups": [
+            "advfarm:destroy_stage_0",
+            "advfarm:destroy_stage_1",
+            "advfarm:destroy_stage_2",
+            "advfarm:destroy_stage_3"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:destroy_stage_4"
+          ]
+        }
+      },
+      "advfarm:object_break": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:is_charged"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_canister_break"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_component",
+              "operator": "==",
+              "value": "minecraft:behavior.knockback_roar"
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_items_break"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "minecraft:is_charged"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:empty_machine_break"
+              ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "advfarm:destroy_stage_0",
+                "advfarm:destroy_stage_1",
+                "advfarm:destroy_stage_2",
+                "advfarm:destroy_stage_3",
+                "advfarm:destroy_stage_4"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:object_break"
+              ]
+            }
+          }
+        ]
+      },
+      "advfarm:object_remove": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:is_charged"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "!=",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_canister_remove"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_component",
+              "operator": "==",
+              "value": "minecraft:behavior.knockback_roar"
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:machine_items_remove"
+              ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "advfarm:destroy_stage_0",
+                "advfarm:destroy_stage_1",
+                "advfarm:destroy_stage_2",
+                "advfarm:destroy_stage_3",
+                "advfarm:destroy_stage_4"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:object_break"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

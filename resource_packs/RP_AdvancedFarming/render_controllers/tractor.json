@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tractor": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    },
+    "controller.render.tractor.headlight": {
+      "geometry": "geometry.default",
+      "materials": [
+        { "*": "variable.tractor_on ? Material.headlight : Material.default" }
+      ],
+      "textures": [ "variable.tractor_on ? Texture.headlight_on : Texture.headlight_off" ]
+    },
+    "controller.render.tractor.attachment": {
+      "arrays": {
+        "geometries": {
+          "Array.tools": [
+            "geometry.no_tool",
+            "geometry.harvester",
+            "geometry.mower",
+            "geometry.plow",
+            "geometry.sprinkler"
+          ]
+        }
+      },
+      "geometry": "Array.tools[query.mark_variant]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    },
+    "controller.render.tractor.fuel_meter": {
+      "geometry": "Geometry.fuel_meter",
+      "materials": [
+        { "*": "Material.default" },
+        { "fuelmeterDisplay": "Material.fuel_meter" }
+      ],
+      "textures": [ "query.variant <= 16 ? Texture.fuel_meter_low : (query.variant > 16 && query.variant <= 32 ? Texture.fuel_meter_half : Texture.fuel_meter_full)" ]
+    },
+    "controller.render.tractor.water_meter": {
+      "geometry": "Geometry.water_meter",
+      "materials": [
+        { "*": "Material.default" },
+        { "watermeterDisplay": "Material.fuel_meter" }
+      ],
+      "textures": [ "Texture.water_meter" ]
+    }
+  }
+}

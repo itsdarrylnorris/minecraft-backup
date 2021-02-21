@@ -1,0 +1,29 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:spawn_egg",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_actor_id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "advfarm:sprinkler",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

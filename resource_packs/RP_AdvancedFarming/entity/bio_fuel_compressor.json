@@ -1,0 +1,58 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:bio_fuel_compressor",
+      "materials": {
+        "default": "machine",
+        "destroy": "machine_destroy"
+      },
+      "textures": {
+        "default": "textures/entity/machine/bio_fuel_compressor",
+        "active_0": "textures/entity/machine/bio_fuel_compressor_0",
+        "active_1": "textures/entity/machine/bio_fuel_compressor_1",
+        "active_2": "textures/entity/machine/bio_fuel_compressor_2",
+        "active_3": "textures/entity/machine/bio_fuel_compressor_3",
+        "active_4": "textures/entity/machine/bio_fuel_compressor_4",
+        "active_5": "textures/entity/machine/bio_fuel_compressor_5",
+        "active_6": "textures/entity/machine/bio_fuel_compressor_6",
+        "active_7": "textures/entity/machine/bio_fuel_compressor_7",
+        "destroy_stage_none": "textures/entity/machine/destroy/destroy_stage_none",
+        "destroy_stage_0": "textures/entity/machine/destroy/destroy_stage_0",
+        "destroy_stage_1": "textures/entity/machine/destroy/destroy_stage_1",
+        "destroy_stage_2": "textures/entity/machine/destroy/destroy_stage_2",
+        "destroy_stage_3": "textures/entity/machine/destroy/destroy_stage_3",
+        "destroy_stage_4": "textures/entity/machine/destroy/destroy_stage_4",
+        "destroy_stage_5": "textures/entity/machine/destroy/destroy_stage_5",
+        "destroy_stage_6": "textures/entity/machine/destroy/destroy_stage_6",
+        "destroy_stage_7": "textures/entity/machine/destroy/destroy_stage_7",
+        "destroy_stage_8": "textures/entity/machine/destroy/destroy_stage_8",
+        "destroy_stage_9": "textures/entity/machine/destroy/destroy_stage_9"
+      },
+      "geometry": {
+        "default": "geometry.machine"
+      },
+      "animations": {
+        "destroy": "controller.animation.workstation.destroy",
+        "setup": "animation.workstation.setup"
+      },
+      "scripts": {
+        "animate": [
+          "destroy",
+          "setup"
+        ]
+      },
+      "particle_effects": {
+        "destruct": "advfarm:machine_destruct"
+      },
+      "render_controllers": [
+        "controller.render.bio_fuel_compressor",
+        "controller.render.machine_destroy"
+      ],
+      "spawn_egg": {
+        "texture": "bio_fuel_compressor",
+        "texture_index": 0
+      }
+    }
+  }
+}

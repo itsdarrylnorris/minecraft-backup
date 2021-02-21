@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.workstation.setup": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [ 0.0, "-query.body_y_rotation + ((query.body_y_rotation >= -45 && query.body_y_rotation <= 45) ? 0 : ((query.body_y_rotation >= 45 && query.body_y_rotation <= 135) ? 90 : ((query.body_y_rotation >= -135 && query.body_y_rotation <= -45) ? -90 : 180)))", 0.0 ]
+        }
+      }
+    }
+  }
+}

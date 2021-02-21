@@ -1,0 +1,95 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.workstation.destroy": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "destroy_stage_0": "query.skin_id == 0"
+            },
+            {
+              "destroy_stage_1": "query.skin_id == 1"
+            },
+            {
+              "destroy_stage_2": "query.skin_id == 2"
+            },
+            {
+              "destroy_stage_3": "query.skin_id == 3"
+            },
+            {
+              "destroy_stage_4": "query.skin_id == 4"
+            }
+          ]
+        },
+        "hit": {
+          "particle_effects": [
+            {
+              "effect": "destruct",
+              "locator": "center"
+            }
+          ],
+          "transitions": [
+            {
+              "destroy_stage_1": "query.skin_id == 1"
+            },
+            {
+              "destroy_stage_2": "query.skin_id == 2"
+            },
+            {
+              "destroy_stage_3": "query.skin_id == 3"
+            },
+            {
+              "destroy_stage_4": "query.skin_id == 4"
+            }
+          ]
+        },
+        "destroy_stage_0": {
+          "transitions": [
+            {
+              "hit": "query.skin_id != 0"
+            }
+          ]
+        },
+        "destroy_stage_1": {
+          "transitions": [
+            {
+              "destroy_stage_0": "query.skin_id == 0"
+            },
+            {
+              "hit": "query.skin_id != 1 && query.skin_id != 0"
+            }
+          ]
+        },
+        "destroy_stage_2": {
+          "transitions": [
+            {
+              "destroy_stage_0": "query.skin_id == 0"
+            },
+            {
+              "hit": "query.skin_id != 2 && query.skin_id != 0"
+            }
+          ]
+        },
+        "destroy_stage_3": {
+          "transitions": [
+            {
+              "destroy_stage_0": "query.skin_id == 0"
+            },
+            {
+              "hit": "query.skin_id != 3 && query.skin_id != 0"
+            }
+          ]
+        },
+        "destroy_stage_4": {
+          "transitions": [
+            {
+              "destroy_stage_0": "query.skin_id == 0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

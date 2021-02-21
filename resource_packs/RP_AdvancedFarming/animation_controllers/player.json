@@ -1,0 +1,48 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.ride_tractor": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "driving": "query.is_riding && query.variant == 1"
+            },
+            {
+              "on_ground": "!query.variant == 1"
+            }
+          ]
+        },
+        "on_ground": {
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "driving": "query.is_riding && query.variant == 1"
+            }
+          ]
+        },
+        "driving": {
+          "animations": [ "riding.tractor" ],
+          "transitions": [
+            {
+              "on_ground": "!query.is_riding"
+            },
+            {
+              "stop_driving": "query.is_riding && query.variant != 1"
+            }
+          ]
+        },
+        "stop_driving": {
+          "animations": [ "riding.tractor" ],
+          "blend_transition": 0.3,
+          "transitions": [
+            {
+              "on_ground": "(1.0)"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

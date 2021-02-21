@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:mower"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "S S",
+      "# #"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:iron_block"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "#": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "advfarm:mower"
+    }
+  }
+}

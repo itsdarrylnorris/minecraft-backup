@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.tractor_tool_item": {
+      "arrays": {
+        "geometries": {
+          "Array.tools": [
+            "geometry.no_tool",
+            "geometry.harvester",
+            "geometry.mower",
+            "geometry.plow",
+            "geometry.sprinkler",
+            "geometry.tractor_body_with_roof",
+            "geometry.tractor_body_with_wheel",
+            "geometry.tractor_body_with_wheels",
+            "geometry.tractor_body",
+            "geometry.tractor_front_wheel",
+            "geometry.tractor_front_wheels",
+            "geometry.tractor_rear_wheel",
+            "geometry.tractor_rear_wheels",
+            "geometry.tractor_roof",
+            "geometry.tractor_steering_wheel"
+          ]
+        }
+      },
+      "geometry": "Array.tools[query.mark_variant]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    },
+    "controller.render.tractor_tool_item.headlight": {
+      "arrays": {
+        "geometries": {
+          "Array.tools": [
+            "geometry.tractor_body_with_roof",
+            "geometry.tractor_body_with_wheel",
+            "geometry.tractor_body_with_wheels",
+            "geometry.tractor_body",
+            "geometry.tractor_roof"
+          ]
+        }
+      },
+      "geometry": "query.mark_variant >= 5 && query.mark_variant <= 8 ? Array.tools[query.mark_variant - 5] : Array.tools[4]",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.headlight" ]
+    }
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:item",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "tractor_tool"
+        ]
+      },
+      "animations": {
+        "tractor_tool": "controller.animation.item.tractor_tool"
+      }
+    },
+    "component_groups": {
+      "advfarm:harvester": {
+        "minecraft:mark_variant": {
+          "value": 1
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:harvester"
+        }
+      },
+      "advfarm:mower": {
+        "minecraft:mark_variant": {
+          "value": 2
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:mower"
+        }
+      },
+      "advfarm:plow": {
+        "minecraft:mark_variant": {
+          "value": 3
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:plow"
+        }
+      },
+      "advfarm:sprinkler": {
+        "minecraft:mark_variant": {
+          "value": 4
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:sprinkler"
+        }
+      },
+      "advfarm:tractor_body_with_roof": {
+        "minecraft:mark_variant": {
+          "value": 5
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_body_with_roof"
+        }
+      },
+      "advfarm:tractor_body_with_wheel": {
+        "minecraft:mark_variant": {
+          "value": 6
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_body_with_wheel"
+        }
+      },
+      "advfarm:tractor_body_with_wheels": {
+        "minecraft:mark_variant": {
+          "value": 7
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_body_with_wheels"
+        }
+      },
+      "advfarm:tractor_body": {
+        "minecraft:mark_variant": {
+          "value": 8
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_body"
+        }
+      },
+      "advfarm:tractor_front_wheel": {
+        "minecraft:mark_variant": {
+          "value": 9
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_front_wheel"
+        }
+      },
+      "advfarm:tractor_front_wheels_on_axis": {
+        "minecraft:mark_variant": {
+          "value": 10
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_front_wheels_on_axis"
+        }
+      },
+      "advfarm:tractor_rear_wheel": {
+        "minecraft:mark_variant": {
+          "value": 11
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_rear_wheel"
+        }
+      },
+      "advfarm:tractor_rear_wheels_on_axis": {
+        "minecraft:mark_variant": {
+          "value": 12
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_rear_wheels_on_axis"
+        }
+      },
+      "advfarm:tractor_roof": {
+        "minecraft:mark_variant": {
+          "value": 13
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_roof"
+        }
+      },
+      "advfarm:tractor_steering_wheel": {
+        "minecraft:mark_variant": {
+          "value": 14
+        },
+        "minecraft:addrider": {
+          "entity_type": "advfarm:tractor_tool_item",
+          "spawn_event": "advfarm:tractor_steering_wheel"
+        }
+      }
+    },
+    "components": {
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "tractor_tool"
+        ],
+        "seats": {
+          "position": [ 0.0, 0.0, 0.0 ]
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "harvester"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 1
+                }
+              ]
+            },
+            "event": "advfarm:harvester"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "mower"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 2
+                }
+              ]
+            },
+            "event": "advfarm:mower"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "plow"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 3
+                }
+              ]
+            },
+            "event": "advfarm:plow"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "sprinkler"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 4
+                }
+              ]
+            },
+            "event": "advfarm:sprinkler"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_body_with_roof"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 5
+                }
+              ]
+            },
+            "event": "advfarm:tractor_body_with_roof"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_body_with_wheel"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 6
+                }
+              ]
+            },
+            "event": "advfarm:tractor_body_with_wheel"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_body_with_wheels"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 7
+                }
+              ]
+            },
+            "event": "advfarm:tractor_body_with_wheels"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_body"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 8
+                }
+              ]
+            },
+            "event": "advfarm:tractor_body"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_front_wheel"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 9
+                }
+              ]
+            },
+            "event": "advfarm:tractor_front_wheel"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_front_wheels"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 10
+                }
+              ]
+            },
+            "event": "advfarm:tractor_front_wheels_on_axis"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_rear_wheel"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 11
+                }
+              ]
+            },
+            "event": "advfarm:tractor_rear_wheel"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_rear_wheels"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 12
+                }
+              ]
+            },
+            "event": "advfarm:tractor_rear_wheels_on_axis"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_roof"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 13
+                }
+              ]
+            },
+            "event": "advfarm:tractor_roof"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "operator": "equals",
+                  "value": "tractor_steering_wheel"
+                },
+                {
+                  "test": "is_mark_variant",
+                  "operator": "!=",
+                  "value": 14
+                }
+              ]
+            },
+            "event": "advfarm:tractor_steering_wheel"
+          }
+        ]
+      }
+    },
+    "events": {
+      "advfarm:harvester": {
+        "add": {
+          "component_groups": [
+            "advfarm:harvester"
+          ]
+        }
+      },
+      "advfarm:mower": {
+        "add": {
+          "component_groups": [
+            "advfarm:mower"
+          ]
+        }
+      },
+      "advfarm:plow": {
+        "add": {
+          "component_groups": [
+            "advfarm:plow"
+          ]
+        }
+      },
+      "advfarm:sprinkler": {
+        "add": {
+          "component_groups": [
+            "advfarm:sprinkler"
+          ]
+        }
+      },
+      "advfarm:tractor_body_with_roof": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_body_with_roof"
+          ]
+        }
+      },
+      "advfarm:tractor_body_with_wheel": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_body_with_wheel"
+          ]
+        }
+      },
+      "advfarm:tractor_body_with_wheels": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_body_with_wheels"
+          ]
+        }
+      },
+      "advfarm:tractor_body": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_body"
+          ]
+        }
+      },
+      "advfarm:tractor_front_wheel": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_front_wheel"
+          ]
+        }
+      },
+      "advfarm:tractor_front_wheels_on_axis": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_front_wheels_on_axis"
+          ]
+        }
+      },
+      "advfarm:tractor_rear_wheel": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_rear_wheel"
+          ]
+        }
+      },
+      "advfarm:tractor_rear_wheels_on_axis": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_rear_wheels_on_axis"
+          ]
+        }
+      },
+      "advfarm:tractor_roof": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_roof"
+          ]
+        }
+      },
+      "advfarm:tractor_steering_wheel": {
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_steering_wheel"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:smooth",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/unknownsmoothhound"
+      },
+      "geometry": {
+        "default": "geometry.smooth"
+      },
+      "animations": {
+        "move": "animation.smooth.swim"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#FFFFFF",
+        "overlay_color": "#FFC0CB"
+      }
+    }
+  }
+}

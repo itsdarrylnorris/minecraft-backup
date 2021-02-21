@@ -1,0 +1,566 @@
+{
+  "individual_event_sounds": {
+    "events": {
+      "break": {
+        "sound": "hit.stone",
+        "volume": 0.5,
+        "pitch": 0.75
+      },
+      "hit": {
+        "sound": "hit.stone",
+        "volume": 0.4,
+        "pitch": 0.5
+      },
+      "item.use.on": {
+        "sound": "object.tractor.wrench",
+        "volume": 1.0,
+        "pitch": 1.0
+      },
+      "place": {
+        "sound": "object.tractor.tool",
+        "volume": 1.0,
+        "pitch": 1.0
+      },
+      "power.on": {
+        "sound": "object.tractor.fuel",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    }
+  },
+  "entity_sounds": {
+    "entities": {
+      "advfarm:bio_fuel_compressor_item": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:bio_fuel_compressor_solidity": {
+        "volume": 1.0,
+        "pitch": 1.5,
+        "events": {
+          "ambient": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "hurt": "",
+          "death": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:bio_fuel_compressor": {
+        "volume": 0.0,
+        "pitch": 0.0,
+        "events": {
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:bio_fuel_filtrator_item": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:bio_fuel_filtrator_solidity": {
+        "volume": 1.0,
+        "pitch": 1.5,
+        "events": {
+          "ambient": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "hurt": "",
+          "death": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:bio_fuel_filtrator": {
+        "volume": 0.0,
+        "pitch": 0.0,
+        "events": {
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:goat": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "ambient": "mob.goat.say",
+          "hurt": "mob.goat.hurt",
+          "death": "mob.goat.hurt",
+          "step": {
+            "sound": "mob.sheep.step",
+            "volume": 0.15,
+            "pitch": 1.0
+          }
+        }
+      },
+      "advfarm:oil_extractor_item": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:oil_extractor_solidity": {
+        "volume": 1.0,
+        "pitch": 1.5,
+        "events": {
+          "ambient": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "hurt": "",
+          "death": {
+            "sound": "dig.stone",
+            "pitch": 1.2
+          },
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:oil_extractor": {
+        "volume": 0.0,
+        "pitch": 0.0,
+        "events": {
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor": {
+        "volume": 1.0,
+        "pitch": 1.0,
+        "events": {
+          "fall.big": {
+            "sound": "object.tractor.thud",
+            "volume": 1.0,
+            "pitch": 1.0
+          },
+          "fall.small": {
+            "sound": "object.tractor.thud",
+            "volume": 1.0,
+            "pitch": 1.0
+          },
+          "hurt": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "death": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:harvester": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:mower": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:plow": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:sprinkler": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_body": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_front_wheel": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_front_wheels_on_axis": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_rear_wheel": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_rear_wheels_on_axis": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_roof": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:tractor_steering_wheel": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:workstation_item": {
+        "volume": 0.0,
+        "pitch": [ 0.0, 0.0 ],
+        "events": {
+          "fall.big": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "fall.small": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          },
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:workstation_solidity": {
+        "volume": 0.35,
+        "pitch": 1.0,
+        "events": {
+          "ambient": {
+            "sound": "random.anvil_land",
+            "volume": 0.68,
+            "pitch": 0.8
+          },
+          "haggle": "",
+          "haggle.yes": {
+            "sound": "object.workstation.use",
+            "volume": 1.0,
+            "pitch": 1.0
+          },
+          "haggle.no": "",
+          "hurt": "",
+          "death": {
+            "sound": "dig.stone",
+            "volume": 0.68,
+            "pitch": 0.8
+          },
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      },
+      "advfarm:workstation": {
+        "volume": 0.0,
+        "pitch": 0.0,
+        "events": {
+          "hurt": "",
+          "death": "",
+          "step": {
+            "sound": "",
+            "volume": 0.0,
+            "pitch": 0.0
+          }
+        }
+      }
+    }
+  }
+}

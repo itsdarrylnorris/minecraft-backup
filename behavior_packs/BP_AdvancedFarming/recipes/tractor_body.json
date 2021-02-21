@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:tractor_body"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " ##",
+      "LBB",
+      " ##"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "L": {
+        "item": "minecraft:redstone_lamp"
+      },
+      "B": {
+        "item": "minecraft:iron_block"
+      }
+    },
+    "result": {
+      "item": "advfarm:tractor_body"
+    }
+  }
+}

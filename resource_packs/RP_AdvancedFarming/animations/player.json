@@ -1,0 +1,55 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.holding": {
+      "loop": true,
+      "bones": {
+				"leftarm": {
+         "rotation": [ "variable.is_holding_left && !(query.is_riding && query.variant == 1) ? (-this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ]
+       },
+       "rightarm": {
+         "rotation": [ "variable.is_holding_right && !(query.is_riding && query.variant == 1) ? (-this * 0.5 - 18.0) : 0.0", 0.0, 0.0 ]
+        }
+      }
+    },
+    "animation.player.in_moving_tractor": {
+      "animation_length": 0.66,
+      "loop": true,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": [ 0.0, 0.0, -0.1 ],
+            "0.06": [ 0.1, 0.0, 0.0 ],
+            "0.12": [ 0.0, 0.0, 0.25 ],
+            "0.18": [ -0.4, 0.0, 0.0 ],
+            "0.24": [ 0.0, 0.0, -0.35 ],
+            "0.30": [ 0.2, 0.0, 0.0 ],
+            "0.36": [ 0.0, 0.0, -0.1 ],
+            "0.42": [ -0.1, 0.0, 0.0 ],
+            "0.48": [ 0.0, 0.0, -0.2 ],
+            "0.54": [ -0.35, 0.0, 0.0 ],
+            "0.60": [ 0.0, 0.0, -0.4 ],
+            "0.66": [ -0.25, 0.0, 0.0 ]
+          }
+        }
+      }
+    },
+    "animation.player.riding.tractor": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [ 0.0, 0.0, 1.5 ]
+        },
+        "waist": {
+          "rotation": [ 24.0, 0.0, 0.0 ]
+        },
+        "leftarm": {
+          "rotation": [ -54.0, 4.5, 0.0 ]
+        },
+        "rightarm": {
+          "rotation": [ -54.0, -4.5, 0.0 ]
+        }
+      }
+    }
+  }
+}

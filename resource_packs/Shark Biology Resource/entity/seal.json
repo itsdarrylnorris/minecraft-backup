@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:seal",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/seal"
+      },
+      "geometry": {
+        "default": "geometry.seal"
+      },
+      "animations": {
+        "move": "animation.seal.walk",
+        "swimming": "animation.seal.swim"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#4B4B4C",
+        "overlay_color": "#A52A2A"
+      }
+    }
+  }
+}

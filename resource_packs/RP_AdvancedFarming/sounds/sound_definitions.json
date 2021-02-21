@@ -1,0 +1,93 @@
+{
+  "mob.goat.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/goat/hurt1",
+      "sounds/mob/goat/hurt2"
+    ]
+  },
+  "mob.goat.say": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/mob/goat/say2",
+      "sounds/mob/goat/say2",
+      "sounds/mob/goat/say3",
+      "sounds/mob/goat/say4",
+      "sounds/mob/goat/say5"
+    ]
+  },
+  "object.tractor.engine_start": {
+    "category": "neutral",
+    "min_distance": 20.0,
+    "sounds": [
+      "sounds/object/tractor/engine_start"
+    ]
+  },
+  "object.tractor.engine_stop": {
+    "category": "neutral",
+    "min_distance": 20.0,
+    "sounds": [
+      "sounds/object/tractor/engine_stop"
+    ]
+  },
+  "object.tractor.engine": {
+    "category": "neutral",
+    "min_distance": 20.0,
+    "sounds": [
+      "sounds/object/tractor/engine1",
+      "sounds/object/tractor/engine2",
+      "sounds/object/tractor/engine3"
+    ]
+  },
+  "object.tractor.fuel": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/object/tractor/fuel"
+    ]
+  },
+  "object.tractor.horn": {
+    "category": "neutral",
+    "min_distance": 20.0,
+    "sounds": [
+      "sounds/object/tractor/horn"
+    ]
+  },
+  "object.tractor.thud": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/object/tractor/thud"
+    ]
+  },
+  "object.tractor.tool": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/object/tractor/tool1",
+      "sounds/object/tractor/tool2"
+    ]
+  },
+  "object.tractor.wrench": {
+    "category": "neutral",
+    "sounds": [
+      "sounds/object/tractor/wrench1",
+      "sounds/object/tractor/wrench2",
+      "sounds/object/tractor/wrench3"
+    ]
+  },
+  "object.workstation.use": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "sounds/object/workstation/workstation1",
+        "volume": 0.5
+      },
+      {
+        "name": "sounds/object/workstation/workstation2",
+        "volume": 0.5
+      },
+      {
+        "name": "sounds/object/workstation/workstation3",
+        "volume": 0.5
+      }
+    ]
+  }
+}

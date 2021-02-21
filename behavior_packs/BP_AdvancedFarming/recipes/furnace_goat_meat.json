@@ -1,0 +1,11 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "advfarm:furnace_goat_meat"
+    },
+    "tags": [ "furnace", "smoker", "campfire" ],
+    "input": "advfarm:goat_meat",
+    "output": "advfarm:cooked_goat_meat"
+  }
+}

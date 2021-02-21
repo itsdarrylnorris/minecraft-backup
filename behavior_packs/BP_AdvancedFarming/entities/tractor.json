@@ -1,0 +1,3384 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "advfarm:tractor",
+      "runtime_identifier": "minecraft:iron_golem",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "break",
+          "harvester_north",
+          "harvester_diagonal_1",
+          "mower_north",
+          "mower_diagonal_1",
+          "plow_north",
+          "plow_diagonal_1",
+          "sprinkler_north",
+          "sprinkler_diagonal_1",
+          "harvester_west",
+          "harvester_diagonal_2",
+          "mower_west",
+          "mower_diagonal_2",
+          "plow_west",
+          "plow_diagonal_2",
+          "sprinkler_west",
+          "sprinkler_diagonal_2",
+          "harvester_south",
+          "harvester_diagonal_3",
+          "mower_south",
+          "mower_diagonal_3",
+          "plow_south",
+          "plow_diagonal_3",
+          "sprinkler_south",
+          "sprinkler_diagonal_3",
+          "harvester_east",
+          "harvester_diagonal_4",
+          "mower_east",
+          "mower_diagonal_4",
+          "plow_east",
+          "plow_diagonal_4",
+          "sprinkler_east",
+          "sprinkler_diagonal_4"
+        ]
+      },
+      "animations": {
+        "break": "controller.animation.tractor.break",
+        "harvester_north": "controller.animation.tractor.harvester.north",
+        "harvester_diagonal_1": "controller.animation.tractor.harvester.diagonal_1",
+        "mower_north": "controller.animation.tractor.mower.north",
+        "mower_diagonal_1": "controller.animation.tractor.mower.diagonal_1",
+        "plow_north": "controller.animation.tractor.plow.north",
+        "plow_diagonal_1": "controller.animation.tractor.plow.diagonal_1",
+        "sprinkler_north": "controller.animation.tractor.sprinkler.north",
+        "sprinkler_diagonal_1": "controller.animation.tractor.sprinkler.diagonal_1",
+        "harvester_west": "controller.animation.tractor.harvester.west",
+        "harvester_diagonal_2": "controller.animation.tractor.harvester.diagonal_2",
+        "mower_west": "controller.animation.tractor.mower.west",
+        "mower_diagonal_2": "controller.animation.tractor.mower.diagonal_2",
+        "plow_west": "controller.animation.tractor.plow.west",
+        "plow_diagonal_2": "controller.animation.tractor.plow.diagonal_2",
+        "sprinkler_west": "controller.animation.tractor.sprinkler.west",
+        "sprinkler_diagonal_2": "controller.animation.tractor.sprinkler.diagonal_2",
+        "harvester_south": "controller.animation.tractor.harvester.south",
+        "harvester_diagonal_3": "controller.animation.tractor.harvester.diagonal_3",
+        "mower_south": "controller.animation.tractor.mower.south",
+        "mower_diagonal_3": "controller.animation.tractor.mower.diagonal_3",
+        "plow_south": "controller.animation.tractor.plow.south",
+        "plow_diagonal_3": "controller.animation.tractor.plow.diagonal_3",
+        "sprinkler_south": "controller.animation.tractor.sprinkler.south",
+        "sprinkler_diagonal_3": "controller.animation.tractor.sprinkler.diagonal_3",
+        "harvester_east": "controller.animation.tractor.harvester.east",
+        "harvester_diagonal_4": "controller.animation.tractor.harvester.diagonal_4",
+        "mower_east": "controller.animation.tractor.mower.east",
+        "mower_diagonal_4": "controller.animation.tractor.mower.diagonal_4",
+        "plow_east": "controller.animation.tractor.plow.east",
+        "plow_diagonal_4": "controller.animation.tractor.plow.diagonal_4",
+        "sprinkler_east": "controller.animation.tractor.sprinkler.east",
+        "sprinkler_diagonal_4": "controller.animation.tractor.sprinkler.diagonal_4"
+      }
+    },
+    "component_groups": {
+      "advfarm:tractor_no_tool": {
+        "minecraft:mark_variant": { "value": 0 }
+      },
+      "advfarm:harvester_attached": {
+        "minecraft:mark_variant": { "value": 1 }
+      },
+      "advfarm:mower_attached": {
+        "minecraft:mark_variant": { "value": 2 }
+      },
+      "advfarm:plow_attached": {
+        "minecraft:mark_variant": { "value": 3 }
+      },
+      "advfarm:sprinkler_attached": {
+        "minecraft:mark_variant": { "value": 4 }
+      },
+      "advfarm:fueled_tractor": {
+        "minecraft:is_charged": {
+        },
+        "minecraft:input_ground_controlled": {
+        },
+        "minecraft:can_power_jump": {
+        },
+        "minecraft:behavior.player_ride_tamed": {
+        }
+      },
+      "advfarm:fuel_consumption": {
+        "minecraft:timer": {
+          "time": 6.0,
+          "looping": true,
+          "time_down_event": {
+            "event": "advfarm:consuming_fuel",
+            "target": "self"
+          }
+        }
+      },
+      "advfarm:water_consumption": {
+        "minecraft:behavior.knockback_roar": {
+          "duration": 6.0,
+          "attack_time": 0,
+          "knockback_damage": 0,
+          "knockback_strength": 0,
+          "knockback_range": 0,
+          "on_roar_end": {
+            "event": "advfarm:running_out_of_water"
+          }
+        }
+      },
+      "advfarm:left_swipe": {
+        "minecraft:is_sheared": {}
+      },
+      "advfarm:right_swipe": {
+        "minecraft:is_illager_captain": {}
+      },
+      "tractor_hit:0": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_component",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "minecraft:is_charged"
+                    }
+                  ]
+                },
+                "event": "advfarm:is_not_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_immobile_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_moving_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:is_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_0_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire"
+                    },
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire_tick"
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_0_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_0_on_hit"
+              },
+              "cause": "lava",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_0_on_hit"
+              },
+              "cause": "drowning",
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "tractor_hit:1": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_component",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "minecraft:is_charged"
+                    }
+                  ]
+                },
+                "event": "advfarm:is_not_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_immobile_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_moving_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:is_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_1_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire"
+                    },
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire_tick"
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_1_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_1_on_hit"
+              },
+              "cause": "lava",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_1_on_hit"
+              },
+              "cause": "drowning",
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "tractor_hit:2": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_component",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "minecraft:is_charged"
+                    }
+                  ]
+                },
+                "event": "advfarm:is_not_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_immobile_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_moving_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:is_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_2_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire"
+                    },
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire_tick"
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_2_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_2_on_hit"
+              },
+              "cause": "lava",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_2_on_hit"
+              },
+              "cause": "drowning",
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "tractor_hit:3": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_component",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "minecraft:is_charged"
+                    }
+                  ]
+                },
+                "event": "advfarm:is_not_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_immobile_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_moving_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:is_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:tractor_3_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire"
+                    },
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire_tick"
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_3_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_3_on_hit"
+              },
+              "cause": "lava",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_3_on_hit"
+              },
+              "cause": "drowning",
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "tractor_hit:4": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_component",
+                      "subject": "self",
+                      "operator": "!=",
+                      "value": "minecraft:is_charged"
+                    }
+                  ]
+                },
+                "event": "advfarm:is_not_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_immobile_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_variant",
+                      "subject": "other",
+                      "operator": "==",
+                      "value": 1
+                    },
+                    {
+                      "test": "is_mark_variant",
+                      "subject": "other",
+                      "operator": "!=",
+                      "value": 1
+                    }
+                  ]
+                },
+                "event": "advfarm:in_moving_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                "event": "advfarm:is_riding_tractor",
+                "target": "other"
+              },
+              "cause": "contact",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_remove"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_riding",
+                      "subject": "other",
+                      "value": false
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_4_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "any_of": [
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire"
+                    },
+                    {
+                      "test": "has_damage",
+                      "operator": "==",
+                      "value": "fire_tick"
+                    }
+                  ]
+                },
+                "event": "advfarm:tractor_4_on_hit"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_4_on_hit"
+              },
+              "cause": "lava",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "advfarm:tractor_4_on_hit"
+              },
+              "cause": "drowning",
+              "deals_damage": false
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "advfarm:tractor_break": {
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "invisibility",
+              "duration": 100,
+              "visible": false
+            },
+            {
+              "effect": "instant_damage",
+              "duration": 100,
+              "amplifier": 250,
+              "visible": false
+            }
+          ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "magic",
+              "deals_damage": true
+            },
+            {
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:despawn": {}
+      },
+      "advfarm:tractor_no_tool_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor.json"
+        }
+      },
+      "advfarm:harvester_attached_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_harvester_attached.json"
+        }
+      },
+      "advfarm:mower_attached_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_mower_attached.json"
+        }
+      },
+      "advfarm:plow_attached_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_plow_attached.json"
+        }
+      },
+      "advfarm:sprinkler_attached_break": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_sprinkler_attached.json"
+        }
+      },
+      "advfarm:harvester_attached_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_harvester.json"
+        }
+      },
+      "advfarm:mower_attached_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_mower.json"
+        }
+      },
+      "advfarm:plow_attached_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_plow.json"
+        }
+      },
+      "advfarm:sprinkler_attached_remove": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/tractor_sprinkler.json"
+        }
+      },
+      "fuel_amount:0": {
+        "minecraft:variant": { "value": 0 }
+      },
+      "fuel_amount:1": {
+        "minecraft:variant": { "value": 1 }
+      },
+      "fuel_amount:2": {
+        "minecraft:variant": { "value": 2 }
+      },
+      "fuel_amount:3": {
+        "minecraft:variant": { "value": 3 }
+      },
+      "fuel_amount:4": {
+        "minecraft:variant": { "value": 4 }
+      },
+      "fuel_amount:5": {
+        "minecraft:variant": { "value": 5 }
+      },
+      "fuel_amount:6": {
+        "minecraft:variant": { "value": 6 }
+      },
+      "fuel_amount:7": {
+        "minecraft:variant": { "value": 7 }
+      },
+      "fuel_amount:8": {
+        "minecraft:variant": { "value": 8 }
+      },
+      "fuel_amount:9": {
+        "minecraft:variant": { "value": 9 }
+      },
+      "fuel_amount:10": {
+        "minecraft:variant": { "value": 10 }
+      },
+      "fuel_amount:11": {
+        "minecraft:variant": { "value": 11 }
+      },
+      "fuel_amount:12": {
+        "minecraft:variant": { "value": 12 }
+      },
+      "fuel_amount:13": {
+        "minecraft:variant": { "value": 13 }
+      },
+      "fuel_amount:14": {
+        "minecraft:variant": { "value": 14 }
+      },
+      "fuel_amount:15": {
+        "minecraft:variant": { "value": 15 }
+      },
+      "fuel_amount:16": {
+        "minecraft:variant": { "value": 16 }
+      },
+      "fuel_amount:17": {
+        "minecraft:variant": { "value": 17 }
+      },
+      "fuel_amount:18": {
+        "minecraft:variant": { "value": 18 }
+      },
+      "fuel_amount:19": {
+        "minecraft:variant": { "value": 19 }
+      },
+      "fuel_amount:20": {
+        "minecraft:variant": { "value": 20 }
+      },
+      "fuel_amount:21": {
+        "minecraft:variant": { "value": 21 }
+      },
+      "fuel_amount:22": {
+        "minecraft:variant": { "value": 22 }
+      },
+      "fuel_amount:23": {
+        "minecraft:variant": { "value": 23 }
+      },
+      "fuel_amount:24": {
+        "minecraft:variant": { "value": 24 }
+      },
+      "fuel_amount:25": {
+        "minecraft:variant": { "value": 25 }
+      },
+      "fuel_amount:26": {
+        "minecraft:variant": { "value": 26 }
+      },
+      "fuel_amount:27": {
+        "minecraft:variant": { "value": 27 }
+      },
+      "fuel_amount:28": {
+        "minecraft:variant": { "value": 28 }
+      },
+      "fuel_amount:29": {
+        "minecraft:variant": { "value": 29 }
+      },
+      "fuel_amount:30": {
+        "minecraft:variant": { "value": 30 }
+      },
+      "fuel_amount:31": {
+        "minecraft:variant": { "value": 31 }
+      },
+      "fuel_amount:32": {
+        "minecraft:variant": { "value": 32 }
+      },
+      "fuel_amount:33": {
+        "minecraft:variant": { "value": 33 }
+      },
+      "fuel_amount:34": {
+        "minecraft:variant": { "value": 34 }
+      },
+      "fuel_amount:35": {
+        "minecraft:variant": { "value": 35 }
+      },
+      "fuel_amount:36": {
+        "minecraft:variant": { "value": 36 }
+      },
+      "fuel_amount:37": {
+        "minecraft:variant": { "value": 37 }
+      },
+      "fuel_amount:38": {
+        "minecraft:variant": { "value": 38 }
+      },
+      "fuel_amount:39": {
+        "minecraft:variant": { "value": 39 }
+      },
+      "fuel_amount:40": {
+        "minecraft:variant": { "value": 40 }
+      },
+      "fuel_amount:41": {
+        "minecraft:variant": { "value": 41 }
+      },
+      "fuel_amount:42": {
+        "minecraft:variant": { "value": 42 }
+      },
+      "fuel_amount:43": {
+        "minecraft:variant": { "value": 43 }
+      },
+      "fuel_amount:44": {
+        "minecraft:variant": { "value": 44 }
+      },
+      "fuel_amount:45": {
+        "minecraft:variant": { "value": 45 }
+      },
+      "fuel_amount:46": {
+        "minecraft:variant": { "value": 46 }
+      },
+      "fuel_amount:47": {
+        "minecraft:variant": { "value": 47 }
+      },
+      "fuel_amount:48": {
+        "minecraft:variant": { "value": 48 }
+      },
+      "fuel_amount:49": {
+        "minecraft:variant": { "value": 49 }
+      },
+      "fuel_amount:50": {
+        "minecraft:variant": { "value": 50 }
+      },
+      "fuel_amount:51": {
+        "minecraft:variant": { "value": 51 }
+      },
+      "fuel_amount:52": {
+        "minecraft:variant": { "value": 52 }
+      },
+      "fuel_amount:53": {
+        "minecraft:variant": { "value": 53 }
+      },
+      "fuel_amount:54": {
+        "minecraft:variant": { "value": 54 }
+      },
+      "fuel_amount:55": {
+        "minecraft:variant": { "value": 55 }
+      },
+      "fuel_amount:56": {
+        "minecraft:variant": { "value": 56 }
+      },
+      "fuel_amount:57": {
+        "minecraft:variant": { "value": 57 }
+      },
+      "fuel_amount:58": {
+        "minecraft:variant": { "value": 58 }
+      },
+      "fuel_amount:59": {
+        "minecraft:variant": { "value": 59 }
+      },
+      "fuel_amount:60": {
+        "minecraft:variant": { "value": 60 }
+      },
+      "fuel_amount:61": {
+        "minecraft:variant": { "value": 61 }
+      },
+      "fuel_amount:62": {
+        "minecraft:variant": { "value": 62 }
+      },
+      "fuel_amount:63": {
+        "minecraft:variant": { "value": 63 }
+      },
+      "fuel_amount:64": {
+        "minecraft:variant": { "value": 64 }
+      },
+      "water_level:0": {
+        "minecraft:skin_id": { "value": 0 }
+      },
+      "water_level:1": {
+        "minecraft:skin_id": { "value": 1 }
+      },
+      "water_level:2": {
+        "minecraft:skin_id": { "value": 2 }
+      },
+      "water_level:3": {
+        "minecraft:skin_id": { "value": 3 }
+      },
+      "water_level:4": {
+        "minecraft:skin_id": { "value": 4 }
+      },
+      "water_level:5": {
+        "minecraft:skin_id": { "value": 5 }
+      },
+      "water_level:6": {
+        "minecraft:skin_id": { "value": 6 }
+      },
+      "water_level:7": {
+        "minecraft:skin_id": { "value": 7 }
+      },
+      "water_level:8": {
+        "minecraft:skin_id": { "value": 8 }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "tractor", "inanimate", "mob" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:collision_box": {
+        "width": 2.6,
+        "height": 2.8
+      },
+      "minecraft:health": {
+        "value": 0.5,
+        "max": 0.5
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 0
+          },
+          {
+            "filters": { "test": "is_underwater", "operator": "==", "value": true },
+            "cause": "drowning",
+            "damage_per_tick": 0
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.22
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:horse.jump_strength": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "has_component", "operator": "!=", "value": "minecraft:timer" },
+                  { "test": "is_variant", "operator": "<=", "value": 56 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:bio_fuel" }
+                ]
+              },
+              "event": "advfarm:to_fuel",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "transform_to_item": "advfarm:canister",
+            "play_sounds": "power.on",
+            "interact_text": "action.interact.tractor:fuel"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_skin_id", "operator": "<=", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "bucket:8" }
+                ]
+              },
+              "event": "advfarm:water_supply",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "transform_to_item": "bucket:0",
+            "play_sounds": "bucket.fill.water",
+            "interact_text": "action.interact.tractor:water_supply"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "<=", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:harvester" }
+                ]
+              },
+              "event": "advfarm:attach_harvester",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "play_sounds": "place",
+            "swing": true,
+            "interact_text": "action.interact.tractor:attach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "<=", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:mower" }
+                ]
+              },
+              "event": "advfarm:attach_mower",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "play_sounds": "place",
+            "swing": true,
+            "interact_text": "action.interact.tractor:attach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "<=", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:plow" }
+                ]
+              },
+              "event": "advfarm:attach_plow",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "play_sounds": "place",
+            "swing": true,
+            "interact_text": "action.interact.tractor:attach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "<=", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:sprinkler" }
+                ]
+              },
+              "event": "advfarm:attach_sprinkler",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "use_item": true,
+            "play_sounds": "place",
+            "swing": true,
+            "interact_text": "action.interact.tractor:attach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "==", "value": 1 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:wrench" }
+                ]
+              },
+              "event": "advfarm:detach_tool",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "hurt_item": 1,
+            "use_item": false,
+            "spawn_items": { "table": "loot_tables/entities/tractor_harvester.json" },
+            "play_sounds": "item.use.on",
+            "swing": true,
+            "interact_text": "action.interact.tractor:detach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "==", "value": 2 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:wrench" }
+                ]
+              },
+              "event": "advfarm:detach_tool",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "hurt_item": 1,
+            "use_item": false,
+            "spawn_items": { "table": "loot_tables/entities/tractor_mower.json" },
+            "play_sounds": "item.use.on",
+            "swing": true,
+            "interact_text": "action.interact.tractor:detach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "==", "value": 3 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:wrench" }
+                ]
+              },
+              "event": "advfarm:detach_tool",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "hurt_item": 1,
+            "use_item": false,
+            "spawn_items": { "table": "loot_tables/entities/tractor_plow.json" },
+            "play_sounds": "item.use.on",
+            "swing": true,
+            "interact_text": "action.interact.tractor:detach_tool"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "value": "player" },
+                  { "test": "is_sneaking", "subject": "other", "value": true },
+                  { "test": "is_mark_variant", "operator": "==", "value": 4 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "advfarm:wrench" }
+                ]
+              },
+              "event": "advfarm:detach_tool",
+              "target": "self"
+            },
+            "cooldown": 0.2,
+            "hurt_item": 1,
+            "use_item": false,
+            "spawn_items": { "table": "loot_tables/entities/tractor_sprinkler.json" },
+            "play_sounds": "item.use.on",
+            "swing": true,
+            "interact_text": "action.interact.tractor:detach_tool"
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "priority": 0,
+        "seat_count": 1,
+        "family_types": [
+          "player"
+        ],
+        "interact_text": "action.interact.enter_tractor",
+        "rider_can_interact": true,
+        "seats": {
+          "position": [ 0.0, 1.06, -0.55 ]
+        }
+      },
+      "minecraft:is_stackable": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_variant", "operator": ">", "value": 0 },
+                { "test": "has_component", "operator": "!=", "value": "minecraft:is_charged" }
+              ]
+            },
+            "event": "advfarm:fueled_tractor"
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_variant", "operator": "<=", "value": 0 },
+                { "test": "has_component", "operator": "==", "value": "minecraft:is_charged" }
+              ]
+            },
+            "event": "advfarm:tractor_no_fuel"
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_moving", "operator": "==", "value": true },
+                { "test": "rider_count", "operator": "==", "value": 1 },
+                { "test": "is_variant", "operator": ">", "value": 0 },
+                { "test": "has_component", "operator": "!=", "value": "minecraft:timer" }
+              ]
+            },
+            "event": "advfarm:start_fuel_consumption"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    { "test": "is_moving", "operator": "==", "value": false },
+                    { "test": "rider_count", "operator": "==", "value": 0 },
+                    { "test": "is_variant", "operator": "<=", "value": 0 }
+                  ]
+                },
+                { "test": "has_component", "operator": "==", "value": "minecraft:timer" }
+              ]
+            },
+            "event": "advfarm:stop_fuel_consumption"
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_moving", "operator": "==", "value": true },
+                { "test": "rider_count", "operator": "==", "value": 1 },
+                { "test": "is_skin_id", "operator": ">", "value": 0 },
+                { "test": "is_mark_variant", "operator": "==", "value": 4 },
+                { "test": "has_component", "operator": "!=", "value": "minecraft:behavior.knockback_roar" }
+              ]
+            },
+            "event": "advfarm:start_water_consumption"
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    { "test": "is_moving", "operator": "==", "value": false },
+                    { "test": "rider_count", "operator": "==", "value": 0 },
+                    { "test": "is_skin_id", "operator": "<=", "value": 0 },
+                    { "test": "is_mark_variant", "operator": "!=", "value": 4 }
+                  ]
+                },
+                { "test": "has_component", "operator": "==", "value": "minecraft:behavior.knockback_roar" }
+              ]
+            },
+            "event": "advfarm:stop_water_consumption"
+          },
+          {
+            "filters": {
+              "any_of": [
+                { "test": "has_component", "operator": "==", "value": "minecraft:is_sheared" },
+                { "test": "has_component", "operator": "==", "value": "minecraft:is_illager_captain" }
+              ]
+            },
+            "event": "advfarm:tractor_swipe_done"
+          }
+        ]
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "fuel_amount:0",
+            "water_level:0",
+            "tractor_hit:0",
+            "advfarm:tractor_no_tool"
+          ]
+        }
+      },
+      "advfarm:tractor_0_on_hit": {
+        "remove": {
+          "component_groups": [
+            "tractor_hit:0"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tractor_hit:1",
+            "advfarm:left_swipe"
+          ]
+        }
+      },
+      "advfarm:tractor_1_on_hit": {
+        "remove": {
+          "component_groups": [
+            "tractor_hit:1"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tractor_hit:2",
+            "advfarm:right_swipe"
+          ]
+        }
+      },
+      "advfarm:tractor_2_on_hit": {
+        "remove": {
+          "component_groups": [
+            "tractor_hit:2"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tractor_hit:3",
+            "advfarm:left_swipe"
+          ]
+        }
+      },
+      "advfarm:tractor_3_on_hit": {
+        "remove": {
+          "component_groups": [
+            "tractor_hit:3"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "tractor_hit:4",
+            "advfarm:right_swipe"
+          ]
+        }
+      },
+      "advfarm:tractor_4_on_hit": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 0
+            },
+            "add": {
+              "component_groups": [ "advfarm:tractor_no_tool_break" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 1
+            },
+            "add": {
+              "component_groups": [ "advfarm:harvester_attached_break" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [ "advfarm:mower_attached_break" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 3
+            },
+            "add": {
+              "component_groups": [ "advfarm:plow_attached_break" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 4
+            },
+            "add": {
+              "component_groups": [ "advfarm:sprinkler_attached_break" ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "tractor_hit:4"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:tractor_break"
+              ]
+            }
+          }
+        ]
+      },
+      "advfarm:tractor_remove": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 1
+            },
+            "add": {
+              "component_groups": [ "advfarm:harvester_attached_remove" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [ "advfarm:mower_attached_remove" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 3
+            },
+            "add": {
+              "component_groups": [ "advfarm:plow_attached_remove" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "==",
+              "value": 4
+            },
+            "add": {
+              "component_groups": [ "advfarm:sprinkler_attached_remove" ]
+            }
+          },
+          {
+            "remove": {
+              "component_groups": [
+                "tractor_hit:0",
+                "tractor_hit:1",
+                "tractor_hit:2",
+                "tractor_hit:3",
+                "tractor_hit:4"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "advfarm:tractor_break"
+              ]
+            }
+          }
+        ]
+      },
+      "advfarm:tractor_swipe_done": {
+        "remove": {
+          "component_groups": [
+            "advfarm:left_swipe",
+            "advfarm:right_swipe"
+          ]
+        }
+      },
+      "advfarm:attach_harvester": {
+        "remove": {
+          "component_groups": [
+            "advfarm:tractor_no_tool",
+            "advfarm:mower_attached",
+            "advfarm:plow_attached",
+            "advfarm:sprinkler_attached"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:harvester_attached"
+          ]
+        }
+      },
+      "advfarm:attach_mower": {
+        "remove": {
+          "component_groups": [
+            "advfarm:tractor_no_tool",
+            "advfarm:harvester_attached",
+            "advfarm:plow_attached",
+            "advfarm:sprinkler_attached"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:mower_attached"
+          ]
+        }
+      },
+      "advfarm:attach_plow": {
+        "remove": {
+          "component_groups": [
+            "advfarm:tractor_no_tool",
+            "advfarm:harvester_attached",
+            "advfarm:mower_attached",
+
+            "advfarm:sprinkler_attached"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:plow_attached"
+          ]
+        }
+      },
+      "advfarm:attach_sprinkler": {
+        "remove": {
+          "component_groups": [
+            "advfarm:tractor_no_tool",
+            "advfarm:harvester_attached",
+            "advfarm:mower_attached",
+            "advfarm:plow_attached"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:sprinkler_attached"
+          ]
+        }
+      },
+      "advfarm:detach_tool": {
+        "remove": {
+          "component_groups": [
+            "advfarm:harvester_attached",
+            "advfarm:mower_attached",
+            "advfarm:plow_attached",
+            "advfarm:sprinkler_attached"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "advfarm:tractor_no_tool"
+          ]
+        }
+      },
+      "advfarm:water_supply": {
+        "add": {
+          "component_groups": [
+            "water_level:8"
+          ]
+        }
+      },
+      "advfarm:fueled_tractor": {
+        "add": {
+          "component_groups": [
+            "advfarm:fueled_tractor"
+          ]
+        }
+      },
+      "advfarm:tractor_no_fuel": {
+        "remove": {
+          "component_groups": [
+            "advfarm:fueled_tractor"
+          ]
+        }
+      },
+      "advfarm:start_fuel_consumption": {
+        "add": {
+          "component_groups": [
+            "advfarm:fuel_consumption"
+          ]
+        }
+      },
+      "advfarm:stop_fuel_consumption": {
+        "remove": {
+          "component_groups": [
+            "advfarm:fuel_consumption"
+          ]
+        }
+      },
+      "advfarm:start_water_consumption": {
+        "add": {
+          "component_groups": [
+            "advfarm:water_consumption"
+          ]
+        }
+      },
+      "advfarm:stop_water_consumption": {
+        "remove": {
+          "component_groups": [
+            "advfarm:water_consumption"
+          ]
+        }
+      },
+      "advfarm:running_out_of_water": {
+        "sequence": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 1
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:0" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 2
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:1" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 3
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:2" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 4
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:3" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 5
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:4" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 6
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:5" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 7
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:6" ]
+            }
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_skin_id",
+                  "operator": "==",
+                  "value": 8
+                },
+                {
+                  "test": "has_component",
+                  "operator": "==",
+                  "value": "minecraft:behavior.knockback_roar"
+                }
+              ]
+            },
+            "add": {
+              "component_groups": [ "water_level:7" ]
+            }
+          }
+        ]
+      },
+      "advfarm:consuming_fuel": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 1
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:0" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:1" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 3
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:2" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 4
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:3" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 5
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:4" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 6
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:5" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 7
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:6" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 8
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:7" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 9
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:8" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 10
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:9" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 11
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:10" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 12
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:11" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 13
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:12" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 14
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:13" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 15
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:14" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 16
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:15" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 17
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:16" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 18
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:17" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 19
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:18" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 20
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:19" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 21
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:20" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 22
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:21" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 23
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:22" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 24
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:23" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 25
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:24" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 26
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:25" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 27
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:26" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 28
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:27" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 29
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:28" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 30
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:29" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 31
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:30" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 32
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:31" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 33
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:32" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 34
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:33" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 35
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:34" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 36
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:35" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 37
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:36" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 38
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:37" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 39
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:38" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 40
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:39" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 41
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:40" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 42
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:41" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 43
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:42" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 44
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:43" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 45
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:44" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 46
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:45" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 47
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:46" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 48
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:47" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 49
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:48" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 50
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:49" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 51
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:50" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 52
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:51" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 53
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:52" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 54
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:53" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 55
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:54" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 56
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:55" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 57
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:56" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 58
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:57" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 59
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:58" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 60
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:59" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 61
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:60" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 62
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:61" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 63
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:62" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 64
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:63" ]
+            }
+          }
+        ]
+      },
+      "advfarm:to_fuel": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 0
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:8" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 1
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:9" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 2
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:10" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 3
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:11" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 4
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:12" ]
+
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 5
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:13" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 6
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:14" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 7
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:15" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 8
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:16" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 9
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:17" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 10
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:18" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 11
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:19" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 12
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:20" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 13
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:21" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 14
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:22" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 15
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:23" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 16
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:24" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 17
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:25" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 18
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:26" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 19
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:27" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 20
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:28" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 21
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:29" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 22
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:30" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 23
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:31" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 24
+
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:32" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 25
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:33" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 26
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:34" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 27
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:35" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 28
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:36" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 29
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:37" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 30
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:38" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 31
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:39" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 32
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:40" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 33
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:41" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 34
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:42" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 35
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:43" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 36
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:44" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 37
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:45" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 38
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:46" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 39
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:47" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 40
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:48" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 41
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:49" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 42
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:50" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 43
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:51" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 44
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:52" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 45
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:53" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 46
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:54" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 47
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:55" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 48
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:56" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 49
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:57" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 50
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:58" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 51
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:59" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 52
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:60" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 53
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:61" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 54
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:62" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 55
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:63" ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 56
+            },
+            "add": {
+              "component_groups": [ "fuel_amount:64" ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

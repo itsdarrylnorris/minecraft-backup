@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:eye",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/eye"
+      },
+      "geometry": {
+        "default": "geometry.eye"
+      },
+      "animations": {
+        "move": "animation.eye.swim",
+        "attack": "animation.eye.bite"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#63C5DA",
+        "overlay_color": "#1520A6"
+      }
+    }
+  }
+}

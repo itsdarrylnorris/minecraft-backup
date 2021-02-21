@@ -1,0 +1,246 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.tractor.move_wheels": {
+      "anim_time_update": "query.modified_distance_moved",
+      "loop": true,
+      "bones": {
+        "r_wheel_yaw": {
+          "rotation": [ "query.anim_time * 15", 0.0, 0.0 ]
+        },
+        "l_wheel_yaw": {
+          "rotation": [ "query.anim_time * 15", 0.0, 0.0 ]
+        },
+        "rear_wheels": {
+          "rotation": [ "query.anim_time * 15", 0.0, 0.0 ]
+        }
+      }
+    },
+    "animation.tractor.driving": {
+      "loop": true,
+      "bones": {
+        "body_root": {
+          "rotation": [ 0.0, 0.0, "math.clamp(query.yaw_speed, -2, 2)" ]
+        },
+        "steeringwheel": {
+          "rotation": [ 0.0, 0.0, "-query.yaw_speed" ]
+        },
+        "rightFront_wheels": {
+          "rotation": [ 0.0, "query.yaw_speed / 4", 0.0 ]
+        },
+        "leftFront_wheels": {
+          "rotation": [ 0.0, "query.yaw_speed / 4", 0.0 ]
+        }
+      }
+    },
+    "animation.tractor.shake_moving": {
+      "animation_length": 0.66,
+      "loop": true,
+      "bones": {
+        "body_root": {
+          "rotation": {
+            "0.0": [ 0.0, 0.0, -0.1 ],
+            "0.06": [ 0.1, 0.0, 0.0 ],
+            "0.12": [ 0.0, 0.0, 0.25 ],
+            "0.18": [ -0.4, 0.0, 0.0 ],
+            "0.24": [ 0.0, 0.0, -0.35 ],
+            "0.30": [ 0.2, 0.0, 0.0 ],
+            "0.36": [ 0.0, 0.0, -0.1 ],
+            "0.42": [ -0.1, 0.0, 0.0 ],
+            "0.48": [ 0.0, 0.0, -0.2 ],
+            "0.54": [ -0.35, 0.0, 0.0 ],
+            "0.60": [ 0.0, 0.0, -0.4 ],
+            "0.66": [ -0.25, 0.0, 0.0 ]
+          }
+        }
+      }
+    },
+    "animation.tractor.fuel_meter": {
+      "loop": true,
+      "bones": {
+        "fuelmeterDisplay": {
+          "scale": [ "query.variant / 64", 1.0, 1.0 ]
+        }
+      }
+    },
+    "animation.tractor.water_meter": {
+      "loop": true,
+      "bones": {
+        "watermeterDisplay": {
+          "scale": [ 1.0, "query.skin_id / 8", 1.0 ]
+        }
+      }
+    },
+    "animation.tractor.engine_sound": {
+      "animation_length": 0.5,
+      "loop": true,
+      "sound_effects": {
+        "0.0": [
+          { "effect": "engine" }
+        ]
+      }
+    },
+    "animation.tractor.engine_start": {
+      "animation_length": 0.8,
+      "sound_effects": {
+        "0.0": [
+          { "effect": "engine_start" }
+        ]
+      }
+    },
+    "animation.tractor.left_swipe": {
+      "animation_length": 0.16,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": [ 0.0, 0.0, 0.0 ],
+            "0.6": [ 0.0, 0.0, -6.0 ],
+            "0.10": [ 0.0, 0.0, 6.0 ],
+            "0.16": [ 0.0, 0.0, 0.0 ]
+          }
+        }
+      }
+    },
+    "animation.tractor.right_swipe": {
+      "animation_length": 0.16,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": [ 0.0, 0.0, 0.0 ],
+            "0.6": [ 0.0, 0.0, 6.0 ],
+            "0.10": [ 0.0, 0.0, -6.0 ],
+            "0.16": [ 0.0, 0.0, 0.0 ]
+          }
+        }
+      }
+    },
+    "animation.tractor.wheels_particle": {
+      "animation_length": 0.3,
+      "loop": true,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "tractor_wheels",
+            "locator": "right_front_wheels"
+          },
+          {
+            "effect": "tractor_wheels",
+            "locator": "left_front_wheels"
+          },
+          {
+            "effect": "tractor_wheels",
+            "locator": "right_rear_wheels"
+          },
+          {
+            "effect": "tractor_wheels",
+            "locator": "left_rear_wheels"
+          }
+        ]
+      }
+    },
+    "animation.tractor.harvester": {
+      "loop": true,
+      "bones": {
+        "harvester": {
+          "rotation": [ "variable.harvester_rotate_return = 0; variable.harvester_rotate = (query.anim_time * 70)  + variable.harvester_rotate_return; return variable.harvester_rotate;", 0, 0 ]
+        }
+      }
+    },
+    "animation.tractor.harvester_static": {
+      "loop": true,
+      "bones": {
+        "harvester": {
+          "rotation": [ "variable.harvester_rotate_return = variable.harvester_rotate; return variable.harvester_rotate_return;", 0, 0 ]
+        }
+      }
+    },
+    "animation.tractor.mower": {
+      "loop": true,
+      "bones": {
+        "right_tool": {
+          "rotation": [ 0, "variable.mower_rotate_return = 0; variable.mower_rotate = (query.anim_time * 400)  + variable.mower_rotate_return; return variable.mower_rotate;", 0 ]
+        },
+        "left_tool": {
+          "rotation": [ 0, "variable.mower_rotate", 0 ]
+        }
+      }
+    },
+    "animation.tractor.mower_static": {
+      "loop": true,
+      "bones": {
+        "right_tool": {
+          "rotation": [ 0, "variable.mower_rotate_return = variable.mower_rotate; return variable.mower_rotate_return;", 0 ]
+        },
+        "left_tool": {
+          "rotation": [ 0, "variable.mower_rotate_return", 0 ]
+        }
+      }
+    },
+    "animation.tractor.sprinkler_splash": {
+      "animation_length": 1.8,
+      "loop": true,
+      "particle_effects": {
+        "0.0": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler6"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler7"
+          }
+        ],
+        "0.2": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler5"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler8"
+          }
+        ],
+        "0.4": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler4"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler9"
+          }
+        ],
+        "0.6": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler3"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler10"
+          }
+        ],
+        "0.8": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler2"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler11"
+          }
+        ],
+        "1.0": [
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler1"
+          },
+          {
+            "effect": "sprinkler_splash",
+            "locator": "sprinkler12"
+          }
+        ]
+      }
+    }
+  }
+}

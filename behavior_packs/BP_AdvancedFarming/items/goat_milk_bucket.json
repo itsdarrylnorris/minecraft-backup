@@ -1,0 +1,47 @@
+{
+  "format_version": "1.14",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:goat_milk_bucket"
+    },
+    "components": {
+      "minecraft:use_duration": 32,
+      "minecraft:max_stack_size": 1,
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": "poor",
+        "can_always_eat": true,
+        "using_converts_to": "bucket:0",
+        "remove_effects": [
+          "speed",
+          "slowness",
+          "haste",
+          "mining_fatigue",
+          "strength",
+          "instant_health",
+          "instant_damage",
+          "jump_boost",
+          "nausea",
+          "regeneration",
+          "resistance",
+          "fire_resistance",
+          "water_breathing",
+          "invisibility",
+          "blindness",
+          "night_vision",
+          "hunger",
+          "weakness",
+          "poison",
+          "wither",
+          "health_boost",
+          "absorption",
+          "saturation",
+          "levitation",
+          "fatal_poison",
+          "slow_falling",
+          "bad_omen"
+        ]
+      }
+    }
+  }
+}

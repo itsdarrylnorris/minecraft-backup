@@ -1,0 +1,169 @@
+
+[
+	
+	{
+		"file_version" : 2
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "pIbV+mbucO81NlKK1R0uhMpeYVWsl8K2lBP0rWc6Dto=" ],
+		"path" : "behavior_packs/2 Player Horse Riding [B]",
+		"uuid" : "5b1101b2-de08-4e5f-9663-b8b004ece827",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "4HDxeNSScqguL0f69gn7xuczi1iyOK9fQSFLz8INJkk=" ],
+		"path" : "behavior_packs/disabled_experiment",
+		"uuid" : "ef052f16-d6a5-4b4b-a1d3-644091ddafdd",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "resource_packs/chemistry",
+		"uuid" : "0fba4063-dba1-4281-9b89-ff9390653530",
+		"version" : "1.0.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "qpbzTEKOVjAKajrVAIc2PDo6bwGb+z8BaV9W+A6v9FQ=" ],
+		"path" : "behavior_packs/BP_AdvancedFarming",
+		"uuid" : "999132e9-2454-48a7-ad92-925bba6caca3",
+		"version" : "1.0.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.15",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.15.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "0OPqL70V1d+Hg94HplTLqy7OYYAZLtBnT7MLNnpWlq4=" ],
+		"path" : "behavior_packs/Shark Biology Behavior",
+		"uuid" : "8c46f145-41f9-4b44-90ab-86b6d59bc10a",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "resource_packs/vanilla",
+		"uuid" : "0575c61f-a5da-4b7f-9961-ffda2908861e",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "iUyaHrSpSsFBZbjCl2bfDPlvj/1wbU9oWF+tjKr/o9Y=" ],
+		"path" : "behavior_packs/experimental_caves_and_cliffs",
+		"uuid" : "8a779527-33b2-4dc6-abf4-947860a6d16d",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.14",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.14.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "h1Ue/wE/O6LI9hUTT3YmC0O09i+52JpGkSpa6wf31Rk=" ],
+		"path" : "resource_packs/Shark Biology Resource",
+		"uuid" : "9eee6707-2579-436a-a010-ee22460310d9",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "UhlWD5rM30uNPbOoVuQrm6n9yMzx9eVMf6axiDHuMnY=" ],
+		"path" : "resource_packs/Energy Shaders v. 3.7.2",
+		"uuid" : "39a0762c-bed8-11ea-b3de-0242ac130004",
+		"version" : "3.7.2"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "YLOC6+dvUFWkQ8HwLV7YmIwK5QgTJx2vnB3AthIEX0E=" ],
+		"path" : "behavior_packs/vanilla_experimental",
+		"uuid" : "47db1a44-55b4-4d4e-aa0f-d5de6206a0fd",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16.200",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.200"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "gymtxHtwe9QzHaW5cHjWWiXsZK/8OzOIbhL3GPN6m7o=" ],
+		"path" : "behavior_packs/test_vanilla_1.11",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.11.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "ngfz3tkbwL8oXiZbQDFSaoJ0ch3NjJEHNZ3aUifA5Ws=" ],
+		"path" : "resource_packs/RP_AdvancedFarming",
+		"uuid" : "ea7d7cd9-861c-46db-b1e0-1736de80afd4",
+		"version" : "1.0.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16.100",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.100"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/chemistry",
+		"uuid" : "6baf8b62-8948-4c99-bb1e-a0cb35dc4579",
+		"version" : "1.0.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=" ],
+		"path" : "behavior_packs/test_vanilla_1.12",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.12.0"
+	}
+]

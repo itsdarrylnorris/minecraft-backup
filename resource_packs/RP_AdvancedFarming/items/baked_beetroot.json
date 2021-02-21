@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:baked_beetroot",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "beetroot_baked",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "miscellaneous"
+    }
+  }
+}

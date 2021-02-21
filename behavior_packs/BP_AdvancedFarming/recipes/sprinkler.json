@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:sprinkler"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "HHH",
+      "###"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:iron_block"
+      },
+      "H": {
+        "item": "advfarm:hose"
+      },
+      "#": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "advfarm:sprinkler"
+    }
+  }
+}

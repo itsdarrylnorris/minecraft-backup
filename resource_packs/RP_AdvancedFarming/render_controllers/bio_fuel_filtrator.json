@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.bio_fuel_filtrator": {
+      "arrays": {
+        "textures": {
+          "Array.active": [
+            "Texture.default",
+            "Texture.active_0",
+            "Texture.active_1",
+            "Texture.active_2"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [
+        "Array.active[query.variant]"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Shake Biology",
+        "name": "Shark Biology",
+        "uuid": "8c46f145-41f9-4b44-90ab-86b6d59bc10a",
+        "version": [0, 0, 1],
+        "min_engine_version": [ 1,8,0 ]
+    },
+    "modules": [
+        {
+            "description": "Shark Biology",
+            "type": "data",
+            "uuid": "b80d16f3-5166-4ec3-b6ab-7ccf8e5a4145",
+            "version": [0, 0, 1]
+        }
+    ]
+}

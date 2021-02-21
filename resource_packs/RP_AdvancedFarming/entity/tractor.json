@@ -1,0 +1,97 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:tractor",
+      "materials": {
+        "default": "tractor",
+        "headlight": "tractor_headlight",
+        "fuel_meter": "fuel_meter"
+      },
+      "textures": {
+        "default": "textures/entity/tractor/tractor",
+        "headlight_off": "textures/entity/tractor/headlight_off",
+        "headlight_on": "textures/entity/tractor/headlight_on",
+        "fuel_meter_low": "textures/entity/fuel_meter/fuel_meter_low",
+        "fuel_meter_half": "textures/entity/fuel_meter/fuel_meter_half",
+        "fuel_meter_full": "textures/entity/fuel_meter/fuel_meter_full",
+        "water_meter": "textures/entity/water_meter/water_meter"
+      },
+      "geometry": {
+        "default": "geometry.tractor",
+        "fuel_meter": "geometry.tractor.fuel_meter",
+        "water_meter": "geometry.tractor.water_meter",
+        "no_tool": "geometry.tractor.no_tool",
+        "harvester": "geometry.tractor.harvester",
+        "mower": "geometry.tractor.mower",
+        "plow": "geometry.tractor.plow",
+        "sprinkler": "geometry.tractor.sprinkler"
+      },
+      "animations": {
+        "move": "animation.tractor.move_wheels",
+        "shake_moving": "controller.animation.tractor.shake_moving",
+        "shake": "animation.tractor.shake_moving",
+        "driving": "animation.tractor.driving",
+        "fuel_meter": "animation.tractor.fuel_meter",
+        "water_meter": "animation.tractor.water_meter",
+        "wheels_emitter": "animation.tractor.wheels_particle",
+        "harvester": "animation.tractor.harvester",
+        "mower": "animation.tractor.mower",
+        "harvester_static": "animation.tractor.harvester_static",
+        "mower_static": "animation.tractor.mower_static",
+        "sprinkler": "animation.tractor.sprinkler_splash",
+        "engine_sound": "animation.tractor.engine_sound",
+        "engine_start": "animation.tractor.engine_start",
+        "left_swipe": "animation.tractor.left_swipe",
+        "right_swipe": "animation.tractor.right_swipe",
+        "tools_controller": "controller.animation.tractor.tools",
+        "working": "controller.animation.tractor.working",
+        "wheels_particle": "controller.animation.tractor.wheels_particle",
+        "swipe_controller": "controller.animation.tractor.swipe"
+      },
+      "particle_effects": {
+        "exhaust_pipe_smoke": "advfarm:tractor_exhaust_pipe_smoke",
+        "tractor_wheels": "advfarm:tractor_wheels_particle",
+        "sprinkler_splash": "advfarm:sprinkler_splash"
+      },
+      "sound_effects": {
+        "engine": "object.tractor.engine",
+        "engine_start": "object.tractor.engine_start",
+        "engine_stop": "object.tractor.engine_stop"
+      },
+      "scripts": {
+        "initialize": [
+          "variable.harvester_rotate = 0;",
+          "variable.harvester_rotate_return = 0;",
+          "variable.mower_rotate = 0;",
+          "variable.mower_rotate_return = 0;"
+        ],
+        "pre_animation": [
+          "variable.tractor_on = query.is_powered && query.has_rider;"
+        ],
+        "animate": [
+          "move",
+          "shake_moving",
+          "fuel_meter",
+          "water_meter",
+          "wheels_particle",
+          "driving",
+          "tools_controller",
+          "working",
+          "swipe_controller"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.tractor",
+        "controller.render.tractor.headlight",
+        "controller.render.tractor.attachment",
+        "controller.render.tractor.fuel_meter",
+        "controller.render.tractor.water_meter"
+      ],
+      "spawn_egg": {
+        "texture": "tractor",
+        "texture_index": 0
+      }
+    }
+  }
+}

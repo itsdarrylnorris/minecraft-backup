@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:plow"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "SSS",
+      "###"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:iron_block"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "#": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "advfarm:plow"
+    }
+  }
+}

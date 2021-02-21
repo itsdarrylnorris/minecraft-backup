@@ -1,0 +1,12 @@
+{
+  "format_version": "1.16",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:oil_extractor",
+      "category": "Items"
+    },   
+    "components": {
+      "minecraft:icon": "oil_extractor"
+    }
+  }
+}

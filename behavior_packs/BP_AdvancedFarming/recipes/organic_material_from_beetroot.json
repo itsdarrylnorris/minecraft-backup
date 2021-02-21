@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:organic_material_from_beetroot"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:beetroot"
+      }
+    },
+    "result": {
+      "item": "advfarm:organic_material"
+    }
+  }
+}

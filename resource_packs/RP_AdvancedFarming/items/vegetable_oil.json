@@ -1,0 +1,12 @@
+{
+  "format_version": "1.16",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:vegetable_oil",
+      "category": "Items"
+    },   
+    "components": {
+      "minecraft:icon": "canister_vegetable_oil"
+    }
+  }
+}

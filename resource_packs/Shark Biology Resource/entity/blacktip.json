@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:blacktip",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/blacktip"
+      },
+      "geometry": {
+        "default": "geometry.blacktip"
+      },
+      "animations": {
+        "move": "animation.blacktip.swim"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#E2E2E2",
+        "overlay_color": "#474747"
+      }
+    }
+  }
+}
