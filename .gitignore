@@ -17,7 +17,6 @@ release-notes.txt
 snap
 structures
 treatments
-valid_known_packs.json
 world_templates
 
 #### The keepers :) 
@@ -27,4 +26,5 @@ world_templates
 # behavior_packs
 # resource_packs
 # permissions.json
+# valid_known_packs.json
 ####
