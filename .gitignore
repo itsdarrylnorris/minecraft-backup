@@ -1,3 +1,30 @@
+Dedicated_Server.txt
 bedrock_server
-minecraftbe/dominecraft/downloads/bedrock-server-1.14.60.5.zip
-minecraftbe/dominecraft/bedrock_server_realms.debug
+bedrock_server_how_to.html
+definitions
+development_behavior_packs
+development_resource_packs
+development_skin_packs
+install.sh
+libCrypto.so
+minecraft-server-activity.log
+minecraft-server.log
+minecraftbe
+minecraftpe
+old-whitelist.json
+premium_cache
+release-notes.txt
+snap
+structures
+treatments
+valid_known_packs.json
+world_templates
+
+#### The keepers :) 
+# whitelist.json
+# worlds
+# server.properties
+# behavior_packs
+# resource_packs
+# permissions.json
+####
