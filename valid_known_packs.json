@@ -25,6 +25,22 @@
 	
 	{
 		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=" ],
+		"path" : "behavior_packs/test_vanilla_1.12",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.12.0"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
 		"path" : "resource_packs/chemistry",
 		"uuid" : "0fba4063-dba1-4281-9b89-ff9390653530",
 		"version" : "1.0.0"
@@ -49,23 +65,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "0OPqL70V1d+Hg94HplTLqy7OYYAZLtBnT7MLNnpWlq4=" ],
-		"path" : "behavior_packs/Shark Biology Behavior",
-		"uuid" : "8c46f145-41f9-4b44-90ab-86b6d59bc10a",
-		"version" : "0.0.1"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"path" : "resource_packs/vanilla",
-		"uuid" : "0575c61f-a5da-4b7f-9961-ffda2908861e",
-		"version" : "0.0.1"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"from_disk" : true,
-		"hashes" : [ "iUyaHrSpSsFBZbjCl2bfDPlvj/1wbU9oWF+tjKr/o9Y=" ],
+		"hashes" : 
+		[
+			"iUyaHrSpSsFBZbjCl2bfDPlvj/1wbU9oWF+tjKr/o9Y=",
+			"NV9RDlXbnLkD+6/V1h5ui/kjfWWfi+hZVs6z9GZbBZQ="
+		],
 		"path" : "behavior_packs/experimental_caves_and_cliffs",
 		"uuid" : "8a779527-33b2-4dc6-abf4-947860a6d16d",
 		"version" : "0.0.1"
@@ -94,6 +98,29 @@
 		"path" : "resource_packs/Energy Shaders v. 3.7.2",
 		"uuid" : "39a0762c-bed8-11ea-b3de-0242ac130004",
 		"version" : "3.7.2"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "0OPqL70V1d+Hg94HplTLqy7OYYAZLtBnT7MLNnpWlq4=" ],
+		"path" : "behavior_packs/Shark Biology Behavior",
+		"uuid" : "8c46f145-41f9-4b44-90ab-86b6d59bc10a",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "resource_packs/vanilla",
+		"uuid" : "0575c61f-a5da-4b7f-9961-ffda2908861e",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16.210",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.210"
 	},
 	
 	{
@@ -146,24 +173,15 @@
 	
 	{
 		"file_system" : "RawPath",
-		"path" : "behavior_packs/chemistry",
-		"uuid" : "6baf8b62-8948-4c99-bb1e-a0cb35dc4579",
-		"version" : "1.0.0"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"path" : "behavior_packs/vanilla",
-		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"path" : "behavior_packs/vanilla_gametest",
+		"uuid" : "fd375b0a-4bdd-4572-9268-e55a79cf99d3",
 		"version" : "0.0.1"
 	},
 	
 	{
 		"file_system" : "RawPath",
-		"from_disk" : true,
-		"hashes" : [ "3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=" ],
-		"path" : "behavior_packs/test_vanilla_1.12",
-		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
-		"version" : "1.12.0"
+		"path" : "behavior_packs/chemistry",
+		"uuid" : "6baf8b62-8948-4c99-bb1e-a0cb35dc4579",
+		"version" : "1.0.0"
 	}
 ]
