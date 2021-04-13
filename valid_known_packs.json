@@ -26,7 +26,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=" ],
+		"hashes" : 
+		[
+			"3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=",
+			"WSTl99doeI8wYoz7DJnPuKIf8HCom/4kkG0IBxjUArE="
+		],
 		"path" : "behavior_packs/test_vanilla_1.12",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
 		"version" : "1.12.0"
@@ -34,9 +38,25 @@
 	
 	{
 		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : [ "0FcCGfbrwuBFyrG9UPzHDdfuSBkaeMPC26SBcYzlshc=" ],
+		"path" : "behavior_packs/experimental_caves_and_cliffs_internal",
+		"uuid" : "00c11a70-6e95-4a38-8ce7-ac6917b783de",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
 		"path" : "behavior_packs/vanilla",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
 		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"path" : "behavior_packs/chemistry",
+		"uuid" : "6baf8b62-8948-4c99-bb1e-a0cb35dc4579",
+		"version" : "1.0.0"
 	},
 	
 	{
@@ -93,6 +113,13 @@
 	
 	{
 		"file_system" : "RawPath",
+		"path" : "behavior_packs/vanilla_1.16.220",
+		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
+		"version" : "1.16.220"
+	},
+	
+	{
+		"file_system" : "RawPath",
 		"from_disk" : true,
 		"hashes" : [ "UhlWD5rM30uNPbOoVuQrm6n9yMzx9eVMf6axiDHuMnY=" ],
 		"path" : "resource_packs/Energy Shaders v. 3.7.2",
@@ -142,7 +169,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "gymtxHtwe9QzHaW5cHjWWiXsZK/8OzOIbhL3GPN6m7o=" ],
+		"hashes" : 
+		[
+			"gymtxHtwe9QzHaW5cHjWWiXsZK/8OzOIbhL3GPN6m7o=",
+			"QlKrfioo0BeS4otnh4Kr1+PBgr8z/cJfV+XNasOisxk="
+		],
 		"path" : "behavior_packs/test_vanilla_1.11",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
 		"version" : "1.11.0"
@@ -176,12 +207,5 @@
 		"path" : "behavior_packs/vanilla_gametest",
 		"uuid" : "fd375b0a-4bdd-4572-9268-e55a79cf99d3",
 		"version" : "0.0.1"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"path" : "behavior_packs/chemistry",
-		"uuid" : "6baf8b62-8948-4c99-bb1e-a0cb35dc4579",
-		"version" : "1.0.0"
 	}
 ]
