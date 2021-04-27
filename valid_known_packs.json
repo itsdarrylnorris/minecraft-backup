@@ -8,16 +8,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "pIbV+mbucO81NlKK1R0uhMpeYVWsl8K2lBP0rWc6Dto=" ],
-		"path" : "behavior_packs/2 Player Horse Riding [B]",
-		"uuid" : "5b1101b2-de08-4e5f-9663-b8b004ece827",
-		"version" : "0.0.1"
-	},
-	
-	{
-		"file_system" : "RawPath",
-		"from_disk" : true,
-		"hashes" : [ "4HDxeNSScqguL0f69gn7xuczi1iyOK9fQSFLz8INJkk=" ],
+		"hashes" : 
+		[
+			"4HDxeNSScqguL0f69gn7xuczi1iyOK9fQSFLz8INJkk=",
+			"re0r5jUDjwCXSdpmQ3eBQCwxCvcOR4YUW0Mv1pzzPhM="
+		],
 		"path" : "behavior_packs/disabled_experiment",
 		"uuid" : "ef052f16-d6a5-4b4b-a1d3-644091ddafdd",
 		"version" : "0.0.1"
@@ -28,8 +23,22 @@
 		"from_disk" : true,
 		"hashes" : 
 		[
+			"pIbV+mbucO81NlKK1R0uhMpeYVWsl8K2lBP0rWc6Dto=",
+			"T3X+8Q6zbPLWKyDWBgSpaX/K3HCD8VvTMprC1YKZDh4="
+		],
+		"path" : "behavior_packs/2 Player Horse Riding [B]",
+		"uuid" : "5b1101b2-de08-4e5f-9663-b8b004ece827",
+		"version" : "0.0.1"
+	},
+	
+	{
+		"file_system" : "RawPath",
+		"from_disk" : true,
+		"hashes" : 
+		[
 			"3FWEj/IPmaj3iUXpovst+9bTVCzCor/SSCI6/YPV12g=",
-			"WSTl99doeI8wYoz7DJnPuKIf8HCom/4kkG0IBxjUArE="
+			"WSTl99doeI8wYoz7DJnPuKIf8HCom/4kkG0IBxjUArE=",
+			"ZiayP+J399xewd+E8S8ciLCdeVUlXR40M9HEry1xDFM="
 		],
 		"path" : "behavior_packs/test_vanilla_1.12",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
@@ -39,7 +48,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "0FcCGfbrwuBFyrG9UPzHDdfuSBkaeMPC26SBcYzlshc=" ],
+		"hashes" : 
+		[
+			"0FcCGfbrwuBFyrG9UPzHDdfuSBkaeMPC26SBcYzlshc=",
+			"dVkJPk2r/uXG6J8yFQV3476cFU0S0Ejcw7bD9ygGlp4="
+		],
 		"path" : "behavior_packs/experimental_caves_and_cliffs_internal",
 		"uuid" : "00c11a70-6e95-4a38-8ce7-ac6917b783de",
 		"version" : "0.0.1"
@@ -69,7 +82,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "qpbzTEKOVjAKajrVAIc2PDo6bwGb+z8BaV9W+A6v9FQ=" ],
+		"hashes" : 
+		[
+			"qpbzTEKOVjAKajrVAIc2PDo6bwGb+z8BaV9W+A6v9FQ=",
+			"ab7G6xuywNlrlmfns9VZS+XzAPRllGAIl3jNKNKZBJI="
+		],
 		"path" : "behavior_packs/BP_AdvancedFarming",
 		"uuid" : "999132e9-2454-48a7-ad92-925bba6caca3",
 		"version" : "1.0.0"
@@ -88,7 +105,8 @@
 		"hashes" : 
 		[
 			"iUyaHrSpSsFBZbjCl2bfDPlvj/1wbU9oWF+tjKr/o9Y=",
-			"NV9RDlXbnLkD+6/V1h5ui/kjfWWfi+hZVs6z9GZbBZQ="
+			"NV9RDlXbnLkD+6/V1h5ui/kjfWWfi+hZVs6z9GZbBZQ=",
+			"F4MlGMKs+rC7c+o6Xqv2Vl9CDW5fNQKuR1h9TRZpEBo="
 		],
 		"path" : "behavior_packs/experimental_caves_and_cliffs",
 		"uuid" : "8a779527-33b2-4dc6-abf4-947860a6d16d",
@@ -105,7 +123,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "h1Ue/wE/O6LI9hUTT3YmC0O09i+52JpGkSpa6wf31Rk=" ],
+		"hashes" : 
+		[
+			"h1Ue/wE/O6LI9hUTT3YmC0O09i+52JpGkSpa6wf31Rk=",
+			"1BFWSbFxGKSJmDDsjjBlvqUfvOWqL+V5+M//BgPMQRk="
+		],
 		"path" : "resource_packs/Shark Biology Resource",
 		"uuid" : "9eee6707-2579-436a-a010-ee22460310d9",
 		"version" : "0.0.1"
@@ -121,7 +143,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "UhlWD5rM30uNPbOoVuQrm6n9yMzx9eVMf6axiDHuMnY=" ],
+		"hashes" : 
+		[
+			"UhlWD5rM30uNPbOoVuQrm6n9yMzx9eVMf6axiDHuMnY=",
+			"HKrUOngt6Xg/z+kk89hKaMi8RjuA4y3duWU/gu610Rc="
+		],
 		"path" : "resource_packs/Energy Shaders v. 3.7.2",
 		"uuid" : "39a0762c-bed8-11ea-b3de-0242ac130004",
 		"version" : "3.7.2"
@@ -130,7 +156,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "0OPqL70V1d+Hg94HplTLqy7OYYAZLtBnT7MLNnpWlq4=" ],
+		"hashes" : 
+		[
+			"0OPqL70V1d+Hg94HplTLqy7OYYAZLtBnT7MLNnpWlq4=",
+			"eeMNv6r7sAXCKXFLh1FkPwO53Qq/yerRkz1QLfoLIw0="
+		],
 		"path" : "behavior_packs/Shark Biology Behavior",
 		"uuid" : "8c46f145-41f9-4b44-90ab-86b6d59bc10a",
 		"version" : "0.0.1"
@@ -153,7 +183,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "YLOC6+dvUFWkQ8HwLV7YmIwK5QgTJx2vnB3AthIEX0E=" ],
+		"hashes" : 
+		[
+			"YLOC6+dvUFWkQ8HwLV7YmIwK5QgTJx2vnB3AthIEX0E=",
+			"DSM+BwTQ0CP0DNhY2NfJqycBJiEBIrioCDGnYB3QAxY="
+		],
 		"path" : "behavior_packs/vanilla_experimental",
 		"uuid" : "47db1a44-55b4-4d4e-aa0f-d5de6206a0fd",
 		"version" : "0.0.1"
@@ -172,7 +206,8 @@
 		"hashes" : 
 		[
 			"gymtxHtwe9QzHaW5cHjWWiXsZK/8OzOIbhL3GPN6m7o=",
-			"QlKrfioo0BeS4otnh4Kr1+PBgr8z/cJfV+XNasOisxk="
+			"QlKrfioo0BeS4otnh4Kr1+PBgr8z/cJfV+XNasOisxk=",
+			"PpBAtvWhZoQ8MOmNJF9fokqyKZTQkrJ+pJXbTGwzjQ0="
 		],
 		"path" : "behavior_packs/test_vanilla_1.11",
 		"uuid" : "fe9f8597-5454-481a-8730-8d070a8e2e58",
@@ -182,7 +217,11 @@
 	{
 		"file_system" : "RawPath",
 		"from_disk" : true,
-		"hashes" : [ "ngfz3tkbwL8oXiZbQDFSaoJ0ch3NjJEHNZ3aUifA5Ws=" ],
+		"hashes" : 
+		[
+			"ngfz3tkbwL8oXiZbQDFSaoJ0ch3NjJEHNZ3aUifA5Ws=",
+			"DAhVoEqo9m32mGz/GyMHr7XOIMSDcPJWYeh2q+/m4LE="
+		],
 		"path" : "resource_packs/RP_AdvancedFarming",
 		"uuid" : "ea7d7cd9-861c-46db-b1e0-1736de80afd4",
 		"version" : "1.0.0"
