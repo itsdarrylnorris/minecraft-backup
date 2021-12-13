@@ -1,0 +1,179 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.tractor.working": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "working_tractor": "variable.tractor_on"
+            },
+            {
+              "tractor_off": "!variable.tractor_on"
+            }
+          ]
+        },
+        "tractor_off": {
+          "transitions": [
+            {
+              "tractor_start": "variable.tractor_on"
+            }
+          ]
+        },
+        "tractor_start": {
+          "animations": [ "engine_start" ],
+          "transitions": [
+            {
+              "tractor_off": "!variable.tractor_on"
+            },
+            {
+              "working_tractor": "variable.tractor_on && query.all_animations_finished"
+            }
+          ]
+        },
+        "working_tractor": {
+          "animations": [ "engine_sound" ],
+          "particle_effects": [
+            {
+              "effect": "exhaust_pipe_smoke",
+              "locator": "exhaust_pipe"
+            }
+          ],
+          "transitions": [
+            {
+              "tractor_stop": "!variable.tractor_on || !query.is_alive"
+            }
+          ]
+        },
+        "tractor_stop": {
+          "sound_effects": [
+            { "effect": "engine_stop" }
+          ],
+          "transitions": [
+            {
+              "tractor_off": "!variable.tractor_on"
+            },
+            {
+              "tractor_start": "variable.tractor_on && query.is_alive"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tractor.shake_moving": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "shaking": "variable.tractor_on && query.is_moving && query.ground_speed > 0"
+            }
+          ]
+        },
+        "shaking": {
+          "animations": [ "shake" ],
+          "transitions": [
+            {
+              "default": "!variable.tractor_on || !query.is_moving || query.ground_speed <= 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tractor.tools": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [ "harvester_static", "mower_static" ],
+          "transitions": [
+            {
+              "harvester": "query.mark_variant == 1 && variable.tractor_on"
+            },
+            {
+              "mower": "query.mark_variant == 2 && variable.tractor_on"
+            },
+            {
+              "sprinkler": "query.skin_id > 0 && query.mark_variant == 4 && variable.tractor_on"
+            }
+          ]
+        },
+        "harvester": {
+          "animations": [ "harvester" ],
+          "transitions": [
+            {
+              "default": "query.mark_variant != 1 || !variable.tractor_on"
+            }
+          ]
+        },
+        "mower": {
+          "animations": [ "mower" ],
+          "transitions": [
+            {
+              "default": "query.mark_variant != 2 || !variable.tractor_on"
+            }
+          ]
+        },
+        "sprinkler": {
+          "animations": [ "sprinkler" ],
+          "transitions": [
+            {
+              "default": "query.skin_id <= 0 || query.mark_variant != 4 || !variable.tractor_on"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tractor.wheels_particle": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "wheels_particle": "query.ground_speed > 8"
+            }
+          ]
+        },
+        "wheels_particle": {
+          "animations": [ "wheels_emitter" ],
+          "transitions": [
+            {
+              "default": "query.ground_speed <= 8"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.tractor.swipe": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "left_swipe": "query.is_sheared"
+            },
+            {
+              "right_swipe": "query.is_illager_captain"
+            }
+          ]
+        },
+        "left_swipe": {
+          "animations": [ "left_swipe" ],
+          "transitions": [
+            {
+              "default": "query.all_animations_finished"
+            }
+          ]
+        },
+        "right_swipe": {
+          "animations": [ "right_swipe" ],
+          "transitions": [
+            {
+              "default": "query.all_animations_finished"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

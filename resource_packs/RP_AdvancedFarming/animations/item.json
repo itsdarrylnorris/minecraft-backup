@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.item.tractor_tool.rotate": {
+      "loop": true,
+      "bones": {
+        "root": {
+          "position": [ 0.0, "(math.cos(query.anim_time * -112.0) * 3.0) + 4", 0.0 ],
+          "rotation": [ 0.0, "query.anim_time * -54.0", 0.0 ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:makolongfin",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/unknownlongfin"
+      },
+      "geometry": {
+        "default": "geometry.mako"
+      },
+      "animations": {
+        "move": "animation.makolongfin.new"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#FFFFFF",
+        "overlay_color": "#E6E6FA"
+      }
+    }
+  }
+}

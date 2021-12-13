@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:tractor_steering_wheel"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#G#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "G": {
+        "item": "minecraft:gold_nugget"
+      }
+    },
+    "result": {
+      "item": "advfarm:tractor_steering_wheel"
+    }
+  }
+}

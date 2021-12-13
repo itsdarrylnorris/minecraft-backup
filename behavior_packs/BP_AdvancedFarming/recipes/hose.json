@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:hose"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "##",
+      "S"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:clay_ball"
+      },
+      "S": {
+        "item": "minecraft:string"
+      }
+    },
+    "result": {
+      "item": "advfarm:hose",
+      "count": 8
+    }
+  }
+}

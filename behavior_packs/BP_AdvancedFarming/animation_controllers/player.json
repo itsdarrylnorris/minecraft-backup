@@ -1,0 +1,129 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.machine_item": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "bio_fuel_compressor": "query.get_equipped_item_name('main_hand') == 'bio_fuel_compressor'"
+            },
+            {
+              "bio_fuel_filtrator": "query.get_equipped_item_name('main_hand') == 'bio_fuel_filtrator'"
+            },
+            {
+              "oil_extractor": "query.get_equipped_item_name('main_hand') == 'oil_extractor'"
+            },
+            {
+              "workstation": "query.get_equipped_item_name('main_hand') == 'workstation'"
+            }
+          ]
+        },
+        "bio_fuel_compressor": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name('main_hand') != 'bio_fuel_compressor'"
+            }
+          ],
+          "on_entry": [
+            "/summon advfarm:bio_fuel_compressor_item",
+            "/replaceitem entity @s slot.weapon.mainhand 0 air"
+          ]
+        },
+        "bio_fuel_filtrator": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name('main_hand') != 'bio_fuel_filtrator'"
+            }
+          ],
+          "on_entry": [
+            "/summon advfarm:bio_fuel_filtrator_item",
+            "/replaceitem entity @s slot.weapon.mainhand 0 air"
+          ]
+        },
+        "oil_extractor": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name('main_hand') != 'oil_extractor'"
+            }
+          ],
+          "on_entry": [
+            "/summon advfarm:oil_extractor_item",
+            "/replaceitem entity @s slot.weapon.mainhand 0 air"
+          ]
+        },
+        "workstation": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name('main_hand') != 'workstation'"
+            }
+          ],
+          "on_entry": [
+            "/summon advfarm:workstation_item",
+            "/replaceitem entity @s slot.weapon.mainhand 0 air"
+          ]
+        }
+      }
+    },
+    "controller.animation.player.riding_tractor": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "is_not_riding_tractor": "!query.is_riding && query.variant != 1"
+            },
+            {
+              "honk_horn": "query.is_riding && query.variant == 1 && query.is_jumping"
+            },
+            {
+              "exit_the_tractor": "!query.is_riding && query.variant == 1"
+            }
+          ]
+        },
+        "is_not_riding_tractor": {
+          "transitions": [
+            {
+              "is_riding_tractor": "query.is_riding && query.variant == 1"
+            }
+          ]
+        },
+        "is_riding_tractor": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"action.hint.horn.advfarm:tractor\"}]}"
+          ]
+        },
+        "honk_horn": {
+          "transitions": [
+            {
+              "default": "query.is_riding && query.variant == 1 && !query.is_jumping"
+            },
+            {
+              "exit_the_tractor": "!query.is_riding && query.variant == 1"
+            }
+          ],
+          "on_entry": [
+            "/stopsound @a[r=20] object.tractor.horn",
+            "/playsound object.tractor.horn @a ~ ~ ~"
+          ]
+        },
+        "exit_the_tractor": {
+          "transitions": [
+            {
+              "is_not_riding_tractor": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "@s advfarm:is_not_riding_tractor"
+          ]
+        }
+      }
+    }
+  }
+}

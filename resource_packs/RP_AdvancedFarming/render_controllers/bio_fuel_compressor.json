@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.bio_fuel_compressor": {
+      "arrays": {
+        "textures": {
+          "Array.active": [
+            "Texture.default",
+            "Texture.active_0",
+            "Texture.active_1",
+            "Texture.active_2",
+            "Texture.active_3",
+            "Texture.active_4",
+            "Texture.active_5",
+            "Texture.active_6",
+            "Texture.active_7",
+            "Texture.active_7",
+            "Texture.active_6",
+            "Texture.active_5",
+            "Texture.active_4",
+            "Texture.active_3",
+            "Texture.active_2",
+            "Texture.active_1",
+            "Texture.active_0"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [
+        "Array.active[query.variant]"
+      ]
+    }
+  }
+}

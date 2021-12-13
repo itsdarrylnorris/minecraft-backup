@@ -1,0 +1,52 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "advfarm:bio_fuel_compressor_item",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:health": {
+        "value": 0.5,
+        "max": 0.5
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/bio_fuel_compressor.json"
+      },
+      "minecraft:spell_effects": {
+        "add_effects": [
+          {
+            "effect": "invisibility",
+            "duration": 100,
+            "visible": false
+          },
+          {
+            "effect": "instant_damage",
+            "duration": 100,
+            "amplifier": 250,
+            "visible": false
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "magic",
+            "deals_damage": true
+          },
+          {
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:despawn": {}
+    }
+  }
+}

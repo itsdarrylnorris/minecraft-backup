@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:goat_meat",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "goat_meat_raw",
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "meats"
+    }
+  }
+}

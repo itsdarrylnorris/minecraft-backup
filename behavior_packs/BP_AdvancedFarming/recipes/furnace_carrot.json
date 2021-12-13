@@ -1,0 +1,11 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "advfarm:furnace_carrot"
+    },
+    "tags": [ "furnace", "smoker", "campfire" ],
+    "input": "minecraft:carrot",
+    "output": "advfarm:baked_carrot"
+  }
+}

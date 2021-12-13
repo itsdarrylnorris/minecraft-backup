@@ -1,0 +1,117 @@
+{
+  "tiers": [
+    {
+      "groups": [
+        {
+          "num_to_select": 4,
+          "trades": [
+            {
+              "max_uses": -1,
+              "wants": [
+                {
+                  "item": "advfarm:tractor_body"
+                },
+                {
+                  "item": "advfarm:tractor_roof"
+                }
+              ],
+              "gives": [
+                {
+                  "item": "advfarm:tractor_body_with_roof",
+                  "functions": [
+                    {
+                      "function": "set_lore",
+                      "lore": [
+                        "",
+                        "§r§cMissing Parts:",
+                        "§r§7Tractor Rear Wheels on Axis",
+                        "§r§7Tractor Front Wheels on Axis",
+                        "§r§7Tractor Steering Wheel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "max_uses": -1,
+              "wants": [
+                {
+                  "item": "advfarm:tractor_body_with_roof"
+                },
+                {
+                  "item": "advfarm:tractor_rear_wheels_on_axis"
+                }
+              ],
+              "gives": [
+                {
+                  "item": "advfarm:tractor_body_with_wheel",
+                  "functions": [
+                    {
+                      "function": "set_lore",
+                      "lore": [
+                        "",
+                        "§r§cMissing Parts:",
+                        "§r§7Tractor Front Wheels on Axis",
+                        "§r§7Tractor Steering Wheel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "max_uses": -1,
+              "wants": [
+                {
+                  "item": "advfarm:tractor_body_with_wheel"
+                },
+                {
+                  "item": "advfarm:tractor_front_wheels_on_axis"
+                }
+              ],
+              "gives": [
+                {
+                  "item": "advfarm:tractor_body_with_wheels",
+                  "functions": [
+                    {
+                      "function": "set_lore",
+                      "lore": [
+                        "",
+                        "§r§cMissing Parts:",
+                        "§r§7Tractor Steering Wheel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "max_uses": -1,
+              "reward_exp": false,
+              "wants": [
+                {
+                  "item": "advfarm:tractor_body_with_wheels"
+                },
+                {
+                  "item": "advfarm:tractor_steering_wheel"
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:spawn_egg",
+                  "functions": [
+                    {
+                      "function": "set_actor_id",
+                      "id": "advfarm:tractor"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

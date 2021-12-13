@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:bio_fuel_compressor"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "IHI",
+      "IOI",
+      "ICI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "H": {
+        "item": "minecraft:hopper"
+      },
+      "O": {
+        "item": "minecraft:obsidian"
+      },
+      "C": {
+        "item": "advfarm:canister"
+      }
+    },
+    "result": {
+      "item": "advfarm:bio_fuel_compressor"
+    }
+  }
+}

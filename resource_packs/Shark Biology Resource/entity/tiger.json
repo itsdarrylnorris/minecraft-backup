@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:tiger",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/tiger"
+      },
+      "geometry": {
+        "default": "geometry.tiger"
+      },
+      "animations": {
+        "move": "animation.tiger.swim",
+        "attack": "animation.tiger.bite"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#FFD300",
+        "overlay_color": "#808080"
+      }
+    }
+  }
+}

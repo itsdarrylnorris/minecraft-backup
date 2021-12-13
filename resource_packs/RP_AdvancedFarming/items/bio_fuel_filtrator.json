@@ -1,0 +1,12 @@
+{
+  "format_version": "1.16",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:bio_fuel_filtrator",
+      "category": "Items"
+    },   
+    "components": {
+      "minecraft:icon": "bio_fuel_filtrator"
+    }
+  }
+}

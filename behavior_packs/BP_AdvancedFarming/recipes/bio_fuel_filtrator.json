@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:bio_fuel_filtrator"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "III",
+      "IPI",
+      "ICI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "P": {
+        "item": "minecraft:planks"
+      },
+      "C": {
+        "item": "advfarm:canister"
+      }
+    },
+    "result": {
+      "item": "advfarm:bio_fuel_filtrator"
+    }
+  }
+}

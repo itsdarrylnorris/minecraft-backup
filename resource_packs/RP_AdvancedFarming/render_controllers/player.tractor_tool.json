@@ -1,0 +1,112 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.harvester": {
+      "geometry": "Geometry.harvester",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.mower": {
+      "geometry": "Geometry.mower",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.plow": {
+      "geometry": "Geometry.plow",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.sprinkler": {
+      "geometry": "Geometry.sprinkler",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_body_with_roof": {
+      "geometry": "Geometry.tractor_body_with_roof",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_body_with_roof_h": {
+      "geometry": "Geometry.tractor_body_with_roof",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool_headlight" ]
+    },
+    "controller.render.player.tractor_body_with_wheel": {
+      "geometry": "Geometry.tractor_body_with_wheel",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_body_with_wheel_h": {
+      "geometry": "Geometry.tractor_body_with_wheel",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool_headlight" ]
+    },
+    "controller.render.player.tractor_body_with_wheels": {
+      "geometry": "Geometry.tractor_body_with_wheels",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_body_with_wheels_h": {
+      "geometry": "Geometry.tractor_body_with_wheels",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool_headlight" ]
+    },
+    "controller.render.player.tractor_body": {
+      "geometry": "Geometry.tractor_body",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_body_h": {
+      "geometry": "Geometry.tractor_body",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool_headlight" ]
+    },
+    "controller.render.player.tractor_front_wheel": {
+      "geometry": "Geometry.tractor_front_wheel",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_front_wheels": {
+      "geometry": "Geometry.tractor_front_wheels",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_rear_wheel": {
+      "geometry": "Geometry.tractor_rear_wheel",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_rear_wheels": {
+      "geometry": "Geometry.tractor_rear_wheels",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_roof": {
+      "geometry": "Geometry.tractor_roof",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.tractor_roof_h": {
+      "geometry": "Geometry.tractor_roof",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool_headlight" ]
+    },
+    "controller.render.player.tractor_steering_wheel": {
+      "geometry": "Geometry.tractor_steering_wheel",
+      "materials": [ { "*": "Material.tractor_tool" } ],
+      "textures": [ "Texture.tractor_tool" ]
+    },
+    "controller.render.player.first_person": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "*": false },
+        { "rightArm": "query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map' || variable.hand_tractor_front_wheels || variable.hand_tractor_rear_wheels" },
+        { "rightSleeve": "query.get_equipped_item_name(0, 1) == '' || query.get_equipped_item_name(0, 1) == 'map'" },
+        { "leftArm": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))" },
+        { "leftSleeve": "(query.get_equipped_item_name(0, 1) == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))" }
+      ]
+    }
+  }
+}

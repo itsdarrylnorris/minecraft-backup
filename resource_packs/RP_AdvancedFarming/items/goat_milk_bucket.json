@@ -1,0 +1,14 @@
+{
+  "format_version": "1.14",
+  "minecraft:item": {
+    "description": {
+      "identifier": "advfarm:goat_milk_bucket",
+      "category": "Equipment"
+    },
+    "components": {
+      "minecraft:icon": "bucket_goat_milk",
+      "minecraft:use_animation": "drink",
+      "minecraft:render_offsets": "bottles"
+    }
+  }
+}

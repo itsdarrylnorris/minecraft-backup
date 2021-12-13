@@ -1,0 +1,54 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.item.tractor_tool": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tag @s[name=Harvester] add harvester",
+            "/tag @s[name=Cosechadora] add harvester",
+            "/tag @s[name=Colheitadeira] add harvester",
+            "/tag @s[name=Mower] add mower",
+            "/tag @s[name=Cortacésped] add mower",
+            "/tag @s[name=\"Cortador de Grama\"] add mower",
+            "/tag @s[name=Plow] add plow",
+            "/tag @s[name=Arado] add plow",
+            "/tag @s[name=Sprinkler] add sprinkler",
+            "/tag @s[name=Aspersor] add sprinkler",
+            "/tag @s[name=\"Tractor Body with Roof\"] add tractor_body_with_roof",
+            "/tag @s[name=\"Cuerpo del tractor con techo\"] add tractor_body_with_roof",
+            "/tag @s[name=\"Corpo do Trator com Cobertura\"] add tractor_body_with_roof",
+            "/tag @s[name=\"Tractor Body with Wheel\"] add tractor_body_with_wheel",
+            "/tag @s[name=\"Cuerpo del tractor con rueda\"] add tractor_body_with_wheel",
+            "/tag @s[name=\"Corpo do Trator com Roda\"] add tractor_body_with_wheel",
+            "/tag @s[name=\"Tractor Body with Wheels\"] add tractor_body_with_wheels",
+            "/tag @s[name=\"Cuerpo del tractor con ruedas\"] add tractor_body_with_wheels",
+            "/tag @s[name=\"Corpo do Trator com Rodas\"] add tractor_body_with_wheels",
+            "/tag @s[name=\"Tractor Body\"] add tractor_body",
+            "/tag @s[name=\"Cuerpo del tractor\"] add tractor_body",
+            "/tag @s[name=\"Corpo do Trator\"] add tractor_body",
+            "/tag @s[name=\"Tractor Front Wheel\"] add tractor_front_wheel",
+            "/tag @s[name=\"Rueda delantera del tractor\"] add tractor_front_wheel",
+            "/tag @s[name=\"Roda Dianteira do Trator\"] add tractor_front_wheel",
+            "/tag @s[name=\"Tractor Front Wheels on Axis\"] add tractor_front_wheels",
+            "/tag @s[name=\"Ruedas delanteras del tractor en el eje\"] add tractor_front_wheels",
+            "/tag @s[name=\"Rodas Dianteiras do Trator no Eixo\"] add tractor_front_wheels",
+            "/tag @s[name=\"Tractor Rear Wheel\"] add tractor_rear_wheel",
+            "/tag @s[name=\"Rueda trasera del tractor\"] add tractor_rear_wheel",
+            "/tag @s[name=\"Roda Traseira do Trator\"] add tractor_rear_wheel",
+            "/tag @s[name=\"Tractor Rear Wheels on Axis\"] add tractor_rear_wheels",
+            "/tag @s[name=\"Ruedas traseras del tractor en el eje\"] add tractor_rear_wheels",
+            "/tag @s[name=\"Rodas Traseiras do Trator no Eixo\"] add tractor_rear_wheels",
+            "/tag @s[name=\"Tractor Roof\"] add tractor_roof",
+            "/tag @s[name=\"Techo del tractor\"] add tractor_roof",
+            "/tag @s[name=\"Cobertura do Trator\"] add tractor_roof",
+            "/tag @s[name=\"Tractor Steering Wheel\"] add tractor_steering_wheel",
+            "/tag @s[name=\"Volante del tractor\"] add tractor_steering_wheel",
+            "/tag @s[name=\"Volante do Trator\"] add tractor_steering_wheel"
+          ]
+        }
+      }
+    }
+  }
+}

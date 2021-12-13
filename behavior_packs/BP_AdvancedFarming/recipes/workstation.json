@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:workstation"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "GGG",
+      "RTR",
+      "RCR"
+    ],
+    "key": {
+      "G": {
+        "item": "minecraft:concrete",
+        "data": 8
+      },
+      "R": {
+        "item": "minecraft:concrete",
+        "data": 14
+      },
+      "T": {
+        "item": "minecraft:crafting_table"
+      },
+      "C": {
+        "item": "minecraft:chest"
+      }
+    },
+    "result": {
+      "item": "advfarm:workstation"
+    }
+  }
+}

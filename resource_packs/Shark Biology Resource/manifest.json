@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "header": {
+    "description": "Shark Biology",
+        "name": "Shark Biology",
+		"uuid": "9eee6707-2579-436a-a010-ee22460310d9",
+        "version": [0, 0, 1],
+        "min_engine_version": [1, 8, 0]
+    },
+    "modules": [
+        {
+            "description": "Shark Biology",
+            "type": "resources",
+			"uuid": "e551fadc-6ea6-4090-a5c3-83c194ba5021",
+            "version": [0, 0, 1]
+        }
+    ]
+}

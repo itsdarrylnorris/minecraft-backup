@@ -1,0 +1,105 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "beetroot_baked": {
+      "textures": "textures/items/beetroot_baked"
+    },
+    "bio_fuel_compressor": {
+      "textures": "textures/items/bio_fuel_compressor"
+    },
+    "bio_fuel_filtrator": {
+      "textures": "textures/items/bio_fuel_filtrator"
+    },
+    "bucket_goat_milk": {
+      "textures": "textures/items/bucket_goat_milk"
+    },
+    "canister_bio_fuel": {
+      "textures": "textures/items/canister_bio_fuel"
+    },
+    "canister_unfiltered_fuel": {
+      "textures": "textures/items/canister_unfiltered_fuel"
+    },
+    "canister_vegetable_oil": {
+      "textures": "textures/items/canister_vegetable_oil"
+    },
+    "canister": {
+      "textures": "textures/items/canister"
+    },
+    "carrot_baked": {
+      "textures": "textures/items/carrot_baked"
+    },
+    "egg_goat": {
+      "textures": "textures/items/egg_goat"
+    },
+    "filter_paper": {
+      "textures": "textures/items/filter_paper"
+    },
+    "goat_meat_cooked": {
+      "textures": "textures/items/goat_meat_cooked"
+    },
+    "goat_meat_raw": {
+      "textures": "textures/items/goat_meat_raw"
+    },
+    "harvester": {
+      "textures": "textures/items/harvester"
+    },
+    "hose": {
+      "textures": "textures/items/hose"
+    },
+    "mower": {
+      "textures": "textures/items/mower"
+    },
+    "oil_extractor": {
+      "textures": "textures/items/oil_extractor"
+    },
+    "organic_material": {
+      "textures": "textures/items/organic_material"
+    },
+    "plow": {
+      "textures": "textures/items/plow"
+    },
+    "sprinkler": {
+      "textures": "textures/items/sprinkler"
+    },
+    "tractor_body_with_roof": {
+      "textures": "textures/items/tractor_body_with_roof"
+    },
+    "tractor_body_with_wheel": {
+      "textures": "textures/items/tractor_body_with_wheel"
+    },
+    "tractor_body_with_wheels": {
+      "textures": "textures/items/tractor_body_with_wheels"
+    },
+    "tractor_body": {
+      "textures": "textures/items/tractor_body"
+    },
+    "tractor_front_wheel": {
+      "textures": "textures/items/tractor_front_wheel"
+    },
+    "tractor_front_wheels": {
+      "textures": "textures/items/tractor_front_wheels"
+    },
+    "tractor_rear_wheel": {
+      "textures": "textures/items/tractor_rear_wheel"
+    },
+    "tractor_rear_wheels": {
+      "textures": "textures/items/tractor_rear_wheels"
+    },
+    "tractor_roof": {
+      "textures": "textures/items/tractor_roof"
+    },
+    "tractor_steering_wheel": {
+      "textures": "textures/items/tractor_steering_wheel"
+    },
+    "tractor": {
+      "textures": "textures/items/tractor"
+    },
+    "workstation": {
+      "textures": "textures/items/workstation"
+    },
+    "wrench": {
+      "textures": "textures/items/wrench"
+    }
+  }
+}

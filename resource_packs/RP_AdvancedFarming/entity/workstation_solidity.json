@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advfarm:workstation_solidity",
+      "materials": { "default": "workstation" },
+      "textures": { "default": "" },
+      "geometry": {
+        "default": "geometry.tractor.no_tool"
+      },
+      "render_controllers": [ "controller.render.tractor" ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:blue",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/blue"
+      },
+      "geometry": {
+        "default": "geometry.blue"
+      },
+      "animations": {
+        "move": "animation.blue.swim",
+        "attack": "animation.blue.attack"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#45B6FE",
+        "overlay_color": "#FFFFFF"
+      }
+    }
+  }
+}

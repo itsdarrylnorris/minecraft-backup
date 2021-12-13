@@ -1,0 +1,55 @@
+{
+  "materials": {
+    "version": "1.0.0",
+    "goat:entity_alphatest": {},
+    "tractor:entity_alphatest": {},
+    "tractor_headlight:entity_emissive_alpha": {},
+    "fuel_meter:entity_emissive_alpha": {},
+    "machine:entity_emissive_alpha": {
+      "depthFunc": "LessEqual"
+    },
+    "machine_destroy:entity_alphatest": {
+      "depthFunc": "LessEqual"
+    },
+    "workstation:entity_alphatest": {},
+    "player_tractor_tool:entity_static": {
+      "+defines": [ "ALPHA_TEST", "DisableCulling" ],
+      "+samplerStates": [
+        {
+          "samplerIndex": 1,
+          "textureWrap": "Repeat"
+        }
+      ],
+      "msaaSupport": "Both"
+    },
+    "item_in_hand_entity_alphatest:entity_alphatest": {
+      "+states": [ "Blending" ],
+      "msaaSupport": "Both"
+    },
+    "item_in_hand:entity": {
+      "+defines": [ "COLOR_BASED", "NO_TEXTURE", "ITEM_IN_HAND" ],
+      "+states": [ "Blending" ],
+      "vertexFields": [
+        { "field": "Position" },
+        { "field": "Normal" },
+        { "field": "Color" },
+        { "field": "UV0" }
+      ],
+      "variants": [
+        {
+          "skinning": {
+            "+defines": [ "USE_SKINNING" ],
+            "vertexFields": [
+              { "field": "Position" },
+              { "field": "BoneId0" },
+              { "field": "Normal" },
+              { "field": "Color" },
+              { "field": "UV0" }
+            ]
+          }
+        }
+      ],
+      "msaaSupport": "Both"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:canister"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#G#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "G": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "advfarm:canister",
+      "count": 3
+    }
+  }
+}

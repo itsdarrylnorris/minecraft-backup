@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:tractor_front_wheels_on_axis"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "WIW"
+    ],
+    "key": {
+      "W": {
+        "item": "advfarm:tractor_front_wheel"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "advfarm:tractor_front_wheels_on_axis"
+    }
+  }
+}

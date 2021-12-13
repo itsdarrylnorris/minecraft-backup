@@ -1,0 +1,92 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.player.hand.tractor_tool": {
+      "loop": true,
+      "bones": {
+        "tool": { "scale": 0.7 },
+        "rightItem": { "scale": 0.0 }
+      }
+    },
+    "animation.player.hand.tractor_body": {
+      "loop": true,
+      "bones": {
+        "tool": { "scale": 0.3 },
+        "rightItem": { "scale": 0.0 }
+      }
+    },
+    "animation.player.hand.tractor_roof": {
+      "loop": true,
+      "bones": {
+        "tool": { "scale": 0.4 },
+        "rightItem": { "scale": 0.0 }
+      }
+    },
+    "animation.player.hand.tractor_wheels": {
+      "loop": true,
+      "bones": {
+        "tool": { "scale": 0.5 },
+        "rightArm": { "rotation": [ -50.0, 0.0, 0.0 ] },
+        "rightItem": { "scale": 0.0 }
+      }
+    },
+    "animation.player.tractor_body.first_person": {
+      "loop": true,
+      "bones": {
+        "tool": {
+          "position": [ -1.0, -1.0, 3.0 ],
+          "rotation": [ 70.0, 55.0, -40.0 ]
+        }
+      }
+    },
+    "animation.player.tractor_steering_wheel.first_person": {
+      "loop": true,
+      "bones": {
+        "steeringwheel_bar": {
+          "position": [ -9.0, 1.5, 0.0 ],
+          "rotation": [ -70.0, -10.0, -80.0 ]
+        }
+      }
+    },
+    "animation.player.tractor_tool.first_person": {
+      "loop": true,
+      "bones": {
+        "tool": {
+          "position": [ -5.0, 0.0, 0.0 ],
+          "rotation": [ -70.0, 60.0, -40.0 ]
+        }
+      }
+    },
+    "animation.player.tractor_wheel.first_person": {
+      "loop": true,
+      "bones": {
+        "tool": {
+          "position": [ -5.0, 6.0, 0.0 ],
+          "rotation": [ 20.0, -80.0, 16.0 ],
+          "scale": 0.75
+        }
+      }
+    },
+    "animation.player.tractor_wheels.first_person": {
+      "loop": true,
+      "bones": {
+        "rightarm": {
+          "position": [ 0.0, 3.5, -1.0 ],
+          "rotation": [ 0.0, 35.0, 60.0 ],
+          "scale": 0.75
+        }
+      }
+    },
+    "animation.player.move.arms": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "rotation": [ "variable.tcos0", 0.0, 0.0 ]
+        },
+        "rightarm": {
+          "rotation": [ "variable.hand_tractor_tool && ! variable.hand_tractor_steering_wheel ? variable.tcos0 / 5 : -variable.tcos0", 0.0, 0.0 ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "shark:tope",
+      "materials": { "default": "salmon" },
+      "textures": {
+        "default": "textures/entity/texturetope"
+      },
+      "geometry": {
+        "default": "geometry.tope"
+      },
+      "animations": {
+        "move": "animation.tope.swim"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.dolphin.general" }
+      ],
+      "render_controllers": [ "controller.render.dolphin" ],
+      "spawn_egg": {
+        "base_color": "#FFFFFF",
+        "overlay_color": "#FFC0CB"
+      }
+    }
+  }
+}

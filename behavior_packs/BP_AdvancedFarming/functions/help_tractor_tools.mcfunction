@@ -1,0 +1,13 @@
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_0"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_1"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_2"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_3"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_4"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_5"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_6"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_7"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_8"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_9"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_10"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_11"}]}
+tellraw @p {"rawtext":[{"translate":"help.advfarm:tractor_tools.line_12"}]}

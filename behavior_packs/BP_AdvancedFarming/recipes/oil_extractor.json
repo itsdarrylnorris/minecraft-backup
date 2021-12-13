@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "advfarm:oil_extractor"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "IHI",
+      "ISI",
+      "ICI"
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "H": {
+        "item": "minecraft:hopper"
+      },
+      "S": {
+        "item": "minecraft:stick"
+      },
+      "C": {
+        "item": "advfarm:canister"
+      }
+    },
+    "result": {
+      "item": "advfarm:oil_extractor"
+    }
+  }
+}
